@@ -20,7 +20,7 @@ export default function Album() {
   const selectedRepos = ['Assistente-OpenAI', 'Marionetista-Puppeteer', 'Rede-Neural'];
 
   useEffect(() => {
-    const token = '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';
+    const token = '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';
     const apiUrl = 'https://api.github.com/user/repos';
 
     fetch(apiUrl, {

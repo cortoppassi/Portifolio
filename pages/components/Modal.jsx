@@ -36,7 +36,7 @@ export default function ChatbotModal() {
   return (
     <div style={modalStyle}>
       <img
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/200e8d139737079.6234b0487404d.gif"
+        src="https://github.com/cortoppassi/Portifolio/blob/main/public/image/chatbot.gif?raw=true"
         alt=""
         style={imgStyle}
         onClick={handleOpen}
@@ -58,7 +58,7 @@ export default function ChatbotModal() {
 function ChatGPTApp() {
   const [pergunta, setPergunta] = React.useState('');
   const [resposta, setResposta] = React.useState('');
-  const [apiKey, setApiKey] = React.useState('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');
+  const [apiKey, setApiKey] = React.useState('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');
   const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = async (e) => {
@@ -66,7 +66,7 @@ function ChatGPTApp() {
     setLoading(true);
 
     if (!apiKey) {
-      setResposta('Necessário colocar a chave da API no arquivo custom.js');
+      setResposta('Necessário colocar a chave da API');
       setLoading(false);
       return;
     }

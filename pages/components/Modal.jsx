@@ -153,6 +153,7 @@ function ChatGPTApp() {
           <Button variant="contained" type="submit" disabled={loading} style={buttonStyle}>
             {loading ? 'Pesquisando...' : 'Enviar'}
           </Button>
+          
         </div>
       </form>
     </div>

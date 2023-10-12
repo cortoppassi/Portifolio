@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CardBlog from '../CardsBlog';
 import Modal from '../Modal'
 
 const defaultTheme = createTheme();
@@ -84,8 +85,8 @@ export default function Album() {
           </Container>
         </Box>
           
-        <Container sx={{ py: 8}} maxWidth="md">
-          <Grid container spacing={4}>
+        <Container sx={{ py: 8}} maxWidth="lg">
+          <Grid container spacing={10}>
             {repos.map(repo => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>
                 <Card
@@ -118,26 +119,33 @@ export default function Album() {
           </Grid>
         </Container>
       </main>
-
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Modal/>
-        
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
+      <Modal/>
+      <Box
+        sx={{
+          p: 6,
+          bgcolor: '#f5f5f5',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column', // Organizar os elementos verticalmente
+          justifyContent: 'space-between', // Alinhar os elementos no início e no final
+          alignItems: 'center'
+        }}
+        component="footer"
         >
-          Conecte-se comigo para colaborações e oportunidades futuras.
-        </Typography>
-
-        <Typography variant="subtitle1" align="center" color="#0e76a8" component="p">
-          <a href='https://www.linkedin.com/in/johncortoppassi/' target="_blank" rel="noopener noreferrer">
-          LinkedIn
-          </a>
-        </Typography>
-        
-      </Box>
+          <div>
+            <CardBlog />
+          </div>
+          <div>
+            <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
+              Conecte-se comigo para colaborações e oportunidades futuras.
+            </Typography>
+            <Typography variant="subtitle1" align="center" color="#0e76a8" component="p">
+              <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </Typography>
+          </div>
+        </Box>
     </ThemeProvider>
   );
 }

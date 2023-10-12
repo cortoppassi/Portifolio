@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -21,7 +20,7 @@ export default function Album() {
   const selectedRepos = ['Assistente-OpenAI', 'Marionetista-Puppeteer', 'Rede-Neural'];
 
   useEffect(() => {
-    const token = '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';
+    const token = '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';
     const apiUrl = 'https://api.github.com/user/repos';
 
     fetch(apiUrl, {
@@ -33,6 +32,7 @@ export default function Album() {
     .then(response => response.json())
     .then(data => {
       // Filtra os repositórios específicos com base nos nomes
+      console.log(data)
       const filteredRepos = data.filter(repo => selectedRepos.includes(repo.name));
       setRepos(filteredRepos);
     })
@@ -72,13 +72,13 @@ export default function Album() {
                   align="left"
                   color="text.primary"
                   gutterBottom
+                  style={{color: '#1976d2'}}
                 >
-                  Jonathan Cortoppassi
+                 Olá
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
-                Cursando Análise e Desenvolvimento de Sistemas 
-                  Durante minha jornada acadêmica, adquiri experiência prática em desenvolvimento de projetos relacionados a inteligência artificial,
-                  chatbots e na criação de jogos em JavaScript, fazendo uso de tecnologias como React e Node.js.
+                  sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
+                  Durante minha jornada acadêmica, adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
                 </Typography>
               </Grid>
             </Grid>
@@ -90,7 +90,7 @@ export default function Album() {
             {repos.map(repo => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>
                 <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                  sx={{ height: '70%', display: 'flex', flexDirection: 'column', backgroundColor:'#f5f5f5'}}
                 >
                   <CardMedia
                     component="div"
@@ -111,7 +111,7 @@ export default function Album() {
                     <Button size="small" href={repo.html_url} target="_blank" rel="noopener noreferrer">
                       Repositório
                     </Button>
-                    <Button size="small">Edit</Button>
+                    {/* <Button size="small">Edit</Button> */}
                   </CardActions>
                 </Card>
               </Grid>
@@ -139,7 +139,7 @@ export default function Album() {
             <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
               Conecte-se comigo para colaborações e oportunidades futuras.
             </Typography>
-            <Typography variant="subtitle1" align="center" color="#0e76a8" component="p">
+            <Typography variant="subtitle1" align="center" color="#1976d2" component="p">
               <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>

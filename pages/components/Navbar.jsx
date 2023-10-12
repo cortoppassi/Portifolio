@@ -15,8 +15,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
+
+
+
 const drawerWidth = 240;
-const navItems = ['sobre', 'Projetos'];
+const navItems = ['Quem Sou', 'Portfólio'];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -49,7 +52,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: 'linear-gradient(90deg, #62a3cf, #001568);' }}>
+      <AppBar component="nav" sx={{ background: 'linear-gradient(90deg,#62a3cf,#001568);'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -68,11 +71,14 @@ function DrawerAppBar(props) {
             Jonathan Cortoppassi - Desenvolvedor Jr.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item, index) => (
-              <Button key={item} sx={{ color: '#fff', border: index === 1 ? '1px solid white' : 'none' }}>
-                {item}
-              </Button>
-            ))}
+          {navItems.map((item, index) => (
+  <Button
+    key={item}
+    sx={{ color: '#fff', border: index === 1 ? '1px solid' : 'none' }}
+  >
+    {item}
+  </Button>
+))}
           </Box>
         </Toolbar>
       </AppBar>

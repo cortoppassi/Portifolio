@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 
 const style = {
   position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 500,
-  p: 4,
+  bottom: 10,
+  right: 25,
+  width: '30%',
+  height: '70%',
+  padding: 4,
   backgroundColor: '#333',
 };
 
@@ -19,30 +19,26 @@ const modalStyle = {
   right: '20px',
 };
 
-const chatBotStyle = {
-  backgroundColor: '#333',
-  color: 'white',
-  padding: '16px',
-  borderRadius: '8px',
-};
-
 export default function ChatbotModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+
+  const imgStyle = {
+    width: '130px',
+    height: '130px',
+    zIndex: '9999',
+    objectFit: 'cover',
+    cursor: 'pointer',
+  };
+
   return (
     <div style={modalStyle}>
       <img
-        src="https://github.com/cortoppassi/Assistente-OpenAI/blob/main/image/ia.gif?raw=true"
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/200e8d139737079.6234b0487404d.gif"
         alt=""
-        style={{
-          width: '130px',
-          height: '130px',
-          zIndex: '9999',
-          clipPath: 'circle(30px at center)',
-          objectFit: 'cover',
-        }}
+        style={imgStyle}
         onClick={handleOpen}
       />
       <Modal
@@ -87,7 +83,7 @@ function ChatGPTApp() {
         body: JSON.stringify({
           model: 'text-davinci-003',
           prompt: pergunta,
-          max_tokens: 20,
+          max_tokens: 50,
           temperature: 0.5,
         }),
       });
@@ -103,14 +99,17 @@ function ChatGPTApp() {
   }
 
   const chatBotStyle = {
-    backgroundColor: '#333',
     color: 'white',
-    padding: '16px',
+    padding: '5px',
     borderRadius: '8px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
   };
+  
 
   const inputContainerStyle = {
     display: 'flex',
@@ -135,7 +134,6 @@ function ChatGPTApp() {
 
   return (
     <div style={chatBotStyle}>
-      
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <p style={{ color: 'white' }}>{pergunta}</p>
         <p style={{ color: 'white' }}> {resposta}</p>
@@ -153,7 +151,6 @@ function ChatGPTApp() {
           <Button variant="contained" type="submit" disabled={loading} style={buttonStyle}>
             {loading ? 'Pesquisando...' : 'Enviar'}
           </Button>
-          
         </div>
       </form>
     </div>

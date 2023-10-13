@@ -35,7 +35,7 @@ export default function Album() {
     if (cachedRepos) {
       setRepos(JSON.parse(cachedRepos));
     } else {
-      const token = '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';
+      const token = gitToken;
       const apiUrl = 'https://api.github.com/user/repos';
 
       fetch(apiUrl, {

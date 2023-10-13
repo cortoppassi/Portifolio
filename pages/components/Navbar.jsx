@@ -81,14 +81,12 @@ function DrawerAppBar(props) {
               Quem Sou
             </Button>
             <Button
-  key="Portfólio"
-  sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
-  onClick={() => scroll.scrollTo('portifolio', { smooth: true, offset: -100 })} // Role até a classe "portifolio"
->
-  Portfólio
-</Button>
-
-
+              key="Portfólio"
+              sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
+              onClick={() => scroll.scrollTo('portifolio', { smooth: true, offset: -100 })} // Role até a classe "portifolio"
+            >
+              Portfólio
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

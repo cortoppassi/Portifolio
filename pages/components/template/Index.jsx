@@ -38,7 +38,7 @@ const repoData = [
     html_url: 'https://github.com/cortoppassi/Rede-Neural',
   },
 ];
-export default function Album() {
+export default function Index() {
   const [repos, setRepos] = useState([]);
 
   return (

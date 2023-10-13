@@ -12,15 +12,19 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CardBlog from '../CardsBlog';
 import Modal from '../Modal'
+import 'dotenv/config';
+const gitToken = process.env.gitApiToken;
 
 const defaultTheme = createTheme();
 
 export default function Album() {
+
+
   const [repos, setRepos] = useState([]);
   const selectedRepos = ['Assistente-OpenAI', 'Marionetista-Puppeteer', 'Rede-Neural'];
 
   useEffect(() => {
-    const token = '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';
+    const token = gitToken;
     const apiUrl = 'https://api.github.com/user/repos';
 
     fetch(apiUrl, {

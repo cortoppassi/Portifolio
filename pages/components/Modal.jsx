@@ -4,6 +4,8 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
+import 'dotenv/config';
+const gptToken = process.env.opemAiToken;
 
 const chatBotStyle = {
   position: 'fixed',
@@ -63,7 +65,7 @@ export default function ChatbotModal() {
 
   const [pergunta, setPergunta] = useState('');
   const [resposta, setResposta] = useState('');
-  const [apiKey, setApiKey] = useState('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');
+  const [apiKey, setApiKey] = useState(gptToken);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {

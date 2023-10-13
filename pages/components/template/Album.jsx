@@ -57,7 +57,7 @@ export default function Album() {
           }}
         >
           <Container maxWidth="md">
-            <Grid container spacing={2}>
+           <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
                 <img
                   src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
@@ -72,9 +72,9 @@ export default function Album() {
                   align="left"
                   color="text.primary"
                   gutterBottom
-                  style={{color: '#001568'}}
+                  style={{ color: '#001568' }}
                 >
-                 Olá
+                  Olá
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
                   sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.

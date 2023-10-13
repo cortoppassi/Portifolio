@@ -19,7 +19,7 @@ const modalStyle = {
   bottom: '10px',
   right: '25px',
   padding: '4px',
-  backgroundColor: '#343541', // Manter a cor de fundo
+  backgroundColor: '#343541',
   borderRadius: '5px',
   width: '30%',
   height: '50%',
@@ -45,6 +45,8 @@ const inputStyle = {
   padding: '8px',
   overflow: 'hidden',
   margin: '5px',
+  justifyContent: 'space-evenly'
+
   // alignItems: 'center',
 };
 
@@ -131,7 +133,7 @@ export default function ChatbotModal() {
             <p style={{ color: '#bababa' }}>{resposta}</p>
           </div>
           <div style={inputStyle}>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{width: '100%', display: 'flex', alignItems: 'center'}}>
               <textarea
                 rows="1"
                 cols="40"
@@ -139,7 +141,7 @@ export default function ChatbotModal() {
                 value={pergunta}
                 onChange={(e) => setPergunta(e.target.value)}
                 onKeyPress={handleKeyPress} // Handle Enter key press
-                style={{ backgroundColor: 'transparent', flex: 1, color: '#bababa', resize: 'none', border: 'none', outline: 'none'}}
+                style={{ backgroundColor: 'transparent', flex: 1, color: '#bababa', resize: 'none', border: 'none', outline: 'none', overflow:'hidden'}}
                 ref={textAreaRef} // Attach the ref to the textarea
               ></textarea>
               <Button type="submit" disabled={loading} style={{ color: 'white' }}>

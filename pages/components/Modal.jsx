@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
+
 import 'dotenv/config';
 const gptToken = process.env.opemAiToken;
 
@@ -116,8 +117,8 @@ export default function ChatbotModal() {
   return (
     <div style={chatBotStyle}>
       <img
-        src="https://github.com/cortoppassi/Portifolio/blob/main/public/image/chatbot.gif?raw=true"
-        alt=""
+        src='https://media.licdn.com/dms/image/D5612AQHyZAlKMTOc0w/article-cover_image-shrink_423_752/0/1678039642851?e=1702512000&v=beta&t=gzAEKOjlZuYpMWOBfBM6MXSreupFeCfoXfJsAaxXtrE'
+        alt="bot"
         style={imgStyle}
         onClick={handleOpen}
       />

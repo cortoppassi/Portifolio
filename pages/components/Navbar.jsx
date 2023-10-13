@@ -1,3 +1,4 @@
+import {  animateScroll as scroll } from 'react-scroll';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -71,14 +72,23 @@ function DrawerAppBar(props) {
             Jonathan Cortoppassi - Desenvolvedor Jr.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-          {navItems.map((item, index) => (
-  <Button
-    key={item}
-    sx={{ color: '#fff', border: index === 1 ? '1px solid' : 'none' }}
-  >
-    {item}
-  </Button>
-))}
+
+          <Button
+              key="Quem Sou"
+              sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
+              onClick={() => scroll.scrollToTop()} // Role até o topo
+            >
+              Quem Sou
+            </Button>
+            <Button
+  key="Portfólio"
+  sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
+  onClick={() => scroll.scrollTo('portifolio', { smooth: true, offset: -100 })} // Role até a classe "portifolio"
+>
+  Portfólio
+</Button>
+
+
           </Box>
         </Toolbar>
       </AppBar>

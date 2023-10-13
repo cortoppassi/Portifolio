@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
 import MicIcon from '@mui/icons-material/Mic';
+import CampaignIcon from '@mui/icons-material/Campaign';
 
 import 'dotenv/config';
 const gptToken = process.env.opemAiToken;
@@ -76,23 +77,23 @@ export default function ChatbotModal() {
       recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
       recognition.current.continuous = true;
       recognition.current.lang = 'pt-BR'; // Set the desired language
-  
+
       recognition.current.onresult = (event) => {
         const text = event.results[event.results.length - 1][0].transcript;
         setPergunta(text);
       };
-  
+
       recognition.current.onend = () => {
         // Recording has ended
       };
-  
+
       recognition.current.onerror = (event) => {
         console.error('Voice recognition error:', event.error);
       };
     } else {
       console.error('Speech recognition is not supported in this browser.');
     }
-  
+
     return () => {
       if (recognition.current) {
         recognition.current.stop();
@@ -109,6 +110,14 @@ export default function ChatbotModal() {
   const stopListening = () => {
     if (recognition.current) {
       recognition.current.stop();
+    }
+  };
+
+  const speakResponse = () => {
+    if ('speechSynthesis' in window) {
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(resposta);
+      synth.speak(utterance);
     }
   };
 
@@ -176,6 +185,11 @@ export default function ChatbotModal() {
           </div>
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             <p style={{ color: '#bababa' }}>{resposta}</p>
+            {resposta && (
+              <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
+                <CampaignIcon />
+              </Button>
+            )}
           </div>
           <div style={inputStyle}>
             <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
@@ -200,12 +214,7 @@ export default function ChatbotModal() {
               <Button type="submit" disabled={loading} style={{ color: 'white' }}>
                 {loading ? <CircularProgress /> : <PlayArrowIcon />}
               </Button>
-              <Button
-                type="button"
-                style={{ color: 'white' }}
-                onMouseDown={startListening}
-                onMouseUp={stopListening}
-              >
+              <Button type="button" style={{ color: 'white' }} onMouseDown={startListening} onMouseUp={stopListening}>
                 {<MicIcon />}
               </Button>
             </form>

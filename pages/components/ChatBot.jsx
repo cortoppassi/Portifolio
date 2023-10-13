@@ -69,26 +69,47 @@ export default function ChatbotModal() {
   const [apiKey, setApiKey] = useState(gptToken);
   const [loading, setLoading] = useState(false);
 
+  const recognition = useRef(null); // Create a ref for SpeechRecognition
+
+  useEffect(() => {
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+      recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.current.continuous = true;
+      recognition.current.lang = 'pt-BR'; // Set the desired language
+  
+      recognition.current.onresult = (event) => {
+        const text = event.results[event.results.length - 1][0].transcript;
+        setPergunta(text);
+      };
+  
+      recognition.current.onend = () => {
+        // Recording has ended
+      };
+  
+      recognition.current.onerror = (event) => {
+        console.error('Voice recognition error:', event.error);
+      };
+    } else {
+      console.error('Speech recognition is not supported in this browser.');
+    }
+  
+    return () => {
+      if (recognition.current) {
+        recognition.current.stop();
+      }
+    };
+  }, []);
+
   const startListening = () => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.lang = 'pt-BR'; // Defina o idioma desejado
+    if (recognition.current) {
+      recognition.current.start();
+    }
+  };
 
-    recognition.start();
-
-    recognition.onresult = (event) => {
-      const text = event.results[event.results.length - 1][0].transcript;
-      setPergunta(text);
-    };
-
-    recognition.onend = () => {
-      // A gravação foi encerrada
-    };
-
-    recognition.onerror = (event) => {
-      console.error('Erro no reconhecimento de voz:', event.error);
-    };
+  const stopListening = () => {
+    if (recognition.current) {
+      recognition.current.stop();
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -179,8 +200,13 @@ export default function ChatbotModal() {
               <Button type="submit" disabled={loading} style={{ color: 'white' }}>
                 {loading ? <CircularProgress /> : <PlayArrowIcon />}
               </Button>
-              <Button type="button" style={{ color: 'white' }} onClick={startListening}>
-                { <MicIcon/>}
+              <Button
+                type="button"
+                style={{ color: 'white' }}
+                onMouseDown={startListening}
+                onMouseUp={stopListening}
+              >
+                {<MicIcon />}
               </Button>
             </form>
           </div>

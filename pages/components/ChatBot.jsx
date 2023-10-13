@@ -24,9 +24,10 @@ const modalStyle = {
   padding: '4px',
   backgroundColor: '#343541',
   borderRadius: '5px',
-  width: '30%',
+  width: '90%', // Alterado para 100% para tela pequena
   height: '50%',
-  opacity: '0.9'
+  opacity: '0.9',
+  maxWidth: '400px', // Adicionado limite máximo de largura
 };
 
 const imgStyle = {
@@ -48,18 +49,16 @@ const inputStyle = {
   padding: '8px',
   overflow: 'hidden',
   margin: '5px',
-  justifyContent: 'space-evenly'
-
-  // alignItems: 'center',
+  justifyContent: 'space-evenly',
 };
 
 export default function ChatbotModal() {
   const [open, setOpen] = useState(false);
-  const textAreaRef = useRef(null); // Add a ref
+  const textAreaRef = useRef(null);
   const handleOpen = () => {
     setOpen(true);
     if (textAreaRef.current) {
-      textAreaRef.current.focus(); // Focus on the textarea when the modal opens
+      textAreaRef.current.focus();
     }
   };
   const handleClose = () => setOpen(false);
@@ -103,13 +102,12 @@ export default function ChatbotModal() {
       setResposta('Sem resposta');
     }
 
-    setPergunta(''); // Clear the input field
+    setPergunta('');
     setLoading(false);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      // Submit the form when Enter is pressed without Shift
       handleSubmit(e);
     }
   };
@@ -129,23 +127,31 @@ export default function ChatbotModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor:'#222'}}>
+          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#222' }}>
             <p style={{ color: '#bababa' }}>{pergunta}</p>
           </div>
-          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor:'#343541'}}>
+          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             <p style={{ color: '#bababa' }}>{resposta}</p>
           </div>
           <div style={inputStyle}>
-            <form onSubmit={handleSubmit} style={{width: '100%', display: 'flex', alignItems: 'center'}}>
+            <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
               <textarea
                 rows="1"
                 cols="40"
                 placeholder="Digite a pergunta"
                 value={pergunta}
                 onChange={(e) => setPergunta(e.target.value)}
-                onKeyPress={handleKeyPress} // Handle Enter key press
-                style={{ backgroundColor: 'transparent', flex: 1, color: '#bababa', resize: 'none', border: 'none', outline: 'none', overflow:'hidden'}}
-                ref={textAreaRef} // Attach the ref to the textarea
+                onKeyPress={handleKeyPress}
+                style={{
+                  backgroundColor: 'transparent',
+                  flex: 1,
+                  color: '#bababa',
+                  resize: 'none',
+                  border: 'none',
+                  outline: 'none',
+                  overflow: 'hidden',
+                }}
+                ref={textAreaRef}
               ></textarea>
               <Button type="submit" disabled={loading} style={{ color: 'white' }}>
                 {loading ? <CircularProgress /> : <PlayArrowIcon />}

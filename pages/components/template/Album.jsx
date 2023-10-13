@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CardBlog from '../CardsBlog';
-import Modal from '../Modal';
+import ChatBot from '../ChatBot';
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
@@ -123,7 +123,7 @@ export default function Album() {
         </Container>
 
       </main>
-      <Modal />
+      <ChatBot />
       <Box
         sx={{
           p: 6,

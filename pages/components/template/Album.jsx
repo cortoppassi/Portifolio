@@ -72,7 +72,7 @@ export default function Album() {
                   align="left"
                   color="text.primary"
                   gutterBottom
-                  style={{color: '#1976d2'}}
+                  style={{color: '#001568'}}
                 >
                  Olá
                 </Typography>
@@ -139,7 +139,7 @@ export default function Album() {
             <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
               Conecte-se comigo para colaborações e oportunidades futuras.
             </Typography>
-            <Typography variant="subtitle1" align="center" color="#1976d2" component="p">
+            <Typography variant="subtitle1" align="center" color="#001568" component="p">
               <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>

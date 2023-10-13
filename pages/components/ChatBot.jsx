@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
+import MicIcon from '@mui/icons-material/Mic';
 
 import 'dotenv/config';
 const gptToken = process.env.opemAiToken;
@@ -68,6 +69,28 @@ export default function ChatbotModal() {
   const [apiKey, setApiKey] = useState(gptToken);
   const [loading, setLoading] = useState(false);
 
+  const startListening = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.lang = 'pt-BR'; // Defina o idioma desejado
+
+    recognition.start();
+
+    recognition.onresult = (event) => {
+      const text = event.results[event.results.length - 1][0].transcript;
+      setPergunta(text);
+    };
+
+    recognition.onend = () => {
+      // A gravação foi encerrada
+    };
+
+    recognition.onerror = (event) => {
+      console.error('Erro no reconhecimento de voz:', event.error);
+    };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -85,7 +108,7 @@ export default function ChatbotModal() {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + apiKey,
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           model: 'text-davinci-003',
@@ -155,6 +178,9 @@ export default function ChatbotModal() {
               ></textarea>
               <Button type="submit" disabled={loading} style={{ color: 'white' }}>
                 {loading ? <CircularProgress /> : <PlayArrowIcon />}
+              </Button>
+              <Button type="button" style={{ color: 'white' }} onClick={startListening}>
+                { <MicIcon/>}
               </Button>
             </form>
           </div>

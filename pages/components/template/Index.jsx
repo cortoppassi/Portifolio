@@ -28,7 +28,7 @@ const repoData = [
   {
     name: 'Marionetista-Puppeteer',
     image: 'https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png',
-    description: 'API de alto nível para controlar o Chrome/Chromium através do protocolo DevTools.',
+    description: 'Automação de tarefas no navegador usando o Puppeteer, uma API de alto nível para controlar o Chrome/Chromium através do protocolo DevTools.',
     html_url: 'https://github.com/cortoppassi/Marionetista-Puppeteer',
   },
   {

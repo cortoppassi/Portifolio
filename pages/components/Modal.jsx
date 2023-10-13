@@ -1,65 +1,68 @@
-import * as React from 'react';
+import React, { useState, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const style = {
-  position: 'absolute',
-  bottom: 10,
-  right: 25,
-  width: '30%',
-  height: '70%',
-  padding: 4,
-  backgroundColor: '#333',
-};
-
-const modalStyle = {
+const chatBotStyle = {
   position: 'fixed',
   bottom: '20px',
   right: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+};
+
+const modalStyle = {
+  position: 'absolute',
+  bottom: '10px',
+  right: '25px',
+  padding: '4px',
+  backgroundColor: '#343541', // Manter a cor de fundo
+  borderRadius: '5px',
+  width: '30%',
+  height: '50%',
+  opacity: '0.9'
+};
+
+const imgStyle = {
+  width: '130px',
+  height: '130px',
+  zIndex: '9999',
+  objectFit: 'cover',
+  cursor: 'pointer',
+};
+
+const inputStyle = {
+  display: 'flex',
+  position: 'absolute',
+  bottom: '0',
+  left: '0',
+  right: '0',
+  backgroundColor: '#222',
+  borderRadius: '5px',
+  padding: '8px',
+  overflow: 'hidden',
+  margin: '5px',
+  // alignItems: 'center',
 };
 
 export default function ChatbotModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const [open, setOpen] = useState(false);
+  const textAreaRef = useRef(null); // Add a ref
+  const handleOpen = () => {
+    setOpen(true);
+    if (textAreaRef.current) {
+      textAreaRef.current.focus(); // Focus on the textarea when the modal opens
+    }
+  };
   const handleClose = () => setOpen(false);
 
-
-  const imgStyle = {
-    width: '130px',
-    height: '130px',
-    zIndex: '9999',
-    objectFit: 'cover',
-    cursor: 'pointer',
-  };
-
-  return (
-    <div style={modalStyle}>
-      <img
-        src="https://github.com/cortoppassi/Portifolio/blob/main/public/image/chatbot.gif?raw=true"
-        alt=""
-        style={imgStyle}
-        onClick={handleOpen}
-      />
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <ChatGPTApp />
-        </Box>
-      </Modal>
-    </div>
-  );
-}
-
-function ChatGPTApp() {
-  const [pergunta, setPergunta] = React.useState('');
-  const [resposta, setResposta] = React.useState('');
-  const [apiKey, setApiKey] = React.useState('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');
-  const [loading, setLoading] = React.useState(false);
+  const [pergunta, setPergunta] = useState('');
+  const [resposta, setResposta] = useState('');
+  const [apiKey, setApiKey] = useState('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');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,64 +98,57 @@ function ChatGPTApp() {
       setResposta('Sem resposta');
     }
 
+    setPergunta(''); // Clear the input field
     setLoading(false);
-  }
-
-  const chatBotStyle = {
-    color: 'white',
-    padding: '5px',
-    borderRadius: '8px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-  };
-  
-
-  const inputContainerStyle = {
-    display: 'flex',
-    flexDirection: 'row', // Alterado para linha (horizontal)
-    alignItems: 'center',
   };
 
-  const inputStyle = {
-    backgroundColor: '#222',
-    color: 'white',
-    padding: '8px',
-    flex: 1, // Ocupa todo o espaço disponível
-    marginRight: '16px', // Espaço entre o campo de texto e o botão
-    overflow: 'hidden',
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      // Submit the form when Enter is pressed without Shift
+      handleSubmit(e);
+    }
   };
-
-  const buttonStyle = {
-    width: '100px', // Largura do botão
-  };
-
-
 
   return (
     <div style={chatBotStyle}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <p style={{ color: 'white' }}>{pergunta}</p>
-        <p style={{ color: 'white' }}> {resposta}</p>
-      </div>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div style={inputContainerStyle}>
-          <textarea
-            rows="1"
-            cols="40"
-            placeholder="Digite a pergunta"
-            value={pergunta}
-            onChange={(e) => setPergunta(e.target.value)}
-            style={inputStyle}
-          ></textarea>
-          <Button variant="contained" type="submit" disabled={loading} style={buttonStyle}>
-            {loading ? 'Pesquisando...' : 'Enviar'}
-          </Button>
-        </div>
-      </form>
+      <img
+        src="https://github.com/cortoppassi/Portifolio/blob/main/public/image/chatbot.gif?raw=true"
+        alt=""
+        style={imgStyle}
+        onClick={handleOpen}
+      />
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor:'#222'}}>
+            <p style={{ color: '#bababa' }}>{pergunta}</p>
+          </div>
+          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor:'#343541'}}>
+            <p style={{ color: '#bababa' }}>{resposta}</p>
+          </div>
+          <div style={inputStyle}>
+            <form onSubmit={handleSubmit}>
+              <textarea
+                rows="1"
+                cols="40"
+                placeholder="Digite a pergunta"
+                value={pergunta}
+                onChange={(e) => setPergunta(e.target.value)}
+                onKeyPress={handleKeyPress} // Handle Enter key press
+                style={{ backgroundColor: 'transparent', flex: 1, color: '#bababa', resize: 'none', border: 'none', outline: 'none'}}
+                ref={textAreaRef} // Attach the ref to the textarea
+              ></textarea>
+              <Button type="submit" disabled={loading} style={{ color: 'white' }}>
+                {loading ? <CircularProgress /> : <PlayArrowIcon />}
+              </Button>
+            </form>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 }

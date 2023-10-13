@@ -57,12 +57,12 @@ export default function Index() {
           }}
         >
           <Container maxWidth="md">
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={4}>
+            <Grid container spacing={2} >
+              <Grid item xs={12} md={4} >
                 <img
                   src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
                   alt=""
-                  style={{ borderRadius: '50%', width: '100%', border: 'solid 1px black' }}
+                  style={{ borderRadius: '50%', width: '100%', border: 'solid 1px black', margin: '0 auto' }}
                 />
               </Grid>
               <Grid item xs={12} md={8}>

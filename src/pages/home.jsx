@@ -12,8 +12,9 @@ import {
   Container,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CardBlog from '../CardsBlog';
-import ChatBot from '../ChatBot';
+import CardBlog from '../components/CardsBlog';
+import ChatBot from '../components/ChatBot';
+import Navbar from '../components/Navbar'
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
@@ -43,6 +44,7 @@ export default function Index() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+        <Navbar />
       <CssBaseline />
       <main style={{ backgroundColor: 'white' }}>
         <Box

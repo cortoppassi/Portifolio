@@ -15,14 +15,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import useAppData from '../data/hook/UseAppData';
+import Link from 'next/link';
 
 
 
 const drawerWidth = 240;
 const navItems = ['Quem Sou', 'Portfólio'];
 
-function DrawerAppBar(props) {
+export default function DrawerAppBar(props) {
+  const dados = useAppData()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -32,20 +34,30 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+    <Typography variant="h6" sx={{ my: 2 }}>
+      MUI
+    </Typography>
+    <Divider />
+    <List>
+      <Link href="/home">
+        <Button key="Home" sx={{ display: 'block' }}>
+          Home
+        </Button>
+      </Link>
+  
+      <Link href="/about">
+        <Button key="About" sx={{ display: 'block' }}>
+          About
+        </Button>
+      </Link>
+  
+      <Link href="/portfolio">
+        <Button key="Portfolio" sx={{ display: 'block' }}>
+          Portfolio
+        </Button>
+      </Link>
+    </List>
+  </Box>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -69,24 +81,28 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
+            
             Jonathan Cortoppassi - Desenvolvedor Jr.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
-          <Button
-              key="Quem Sou"
-              sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
-              onClick={() => scroll.scrollToTop()} // Role até o topo
-            >
-              Quem Sou
+          <Link href="/home">
+            <Button key="Home" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+              Home
             </Button>
-            <Button
-              key="Portfólio"
-              sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}
-              onClick={() => scroll.scrollTo('portifolio', { smooth: true, offset: -100 })} // Role até a classe "portifolio"
-            >
-              Portfólio
+            </Link>
+
+            <Link href="/about">
+            <Button key="About" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+              About
             </Button>
+            </Link>
+
+            <Link href="/portfolio">
+            <Button key="Portfolio" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+              Portfolio
+            </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
@@ -114,5 +130,3 @@ function DrawerAppBar(props) {
 DrawerAppBar.propTypes = {
   window: PropTypes.func,
 };
-
-export default DrawerAppBar;

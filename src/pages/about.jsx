@@ -41,6 +41,7 @@ export default function about () {
                   height: '200px',
                   borderRadius: '50%',
                   overflow: 'hidden',
+                  border: '2px solid black',
                 }}>
                   <Image
                     src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"

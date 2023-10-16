@@ -29,19 +29,19 @@ export default function Navbar(props) {
     </Typography>
     <Divider />
     <List>
-      <Link href="/Home">
+      <Link href="/home">
         <Button key="Home" sx={{ display: 'block' }}>
           Home
         </Button>
       </Link>
   
-      <Link href="/About">
+      <Link href="/about">
         <Button key="About" sx={{ display: 'block' }}>
           About
         </Button>
       </Link>
   
-      <Link href="/Portfolio">
+      <Link href="/portfolio">
         <Button key="Portfolio" sx={{ display: 'block' }}>
           Portfolio
         </Button>
@@ -76,19 +76,19 @@ export default function Navbar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
-          <Link href="/Home">
+          <Link href="/home">
             <Button key="Home" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               Home
             </Button>
             </Link>
 
-            <Link href="/About">
+            <Link href="/about">
             <Button key="About" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               About
             </Button>
             </Link>
 
-            <Link href="/Portfolio">
+            <Link href="/portfolio">
             <Button key="Portfolio" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               Portfolio
             </Button>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,7 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import useAppData from '../data/hook/UseAppData';
 import Link from 'next/link';
 
 const drawerWidth = 240;
@@ -31,19 +29,19 @@ export default function Navbar(props) {
     </Typography>
     <Divider />
     <List>
-      <Link href="/home">
+      <Link href="/Home">
         <Button key="Home" sx={{ display: 'block' }}>
           Home
         </Button>
       </Link>
   
-      <Link href="/about">
+      <Link href="/About">
         <Button key="About" sx={{ display: 'block' }}>
           About
         </Button>
       </Link>
   
-      <Link href="/portfolio">
+      <Link href="/Portfolio">
         <Button key="Portfolio" sx={{ display: 'block' }}>
           Portfolio
         </Button>

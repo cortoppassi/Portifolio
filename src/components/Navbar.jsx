@@ -1,4 +1,3 @@
-import {  animateScroll as scroll } from 'react-scroll';
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -8,9 +7,6 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -18,13 +14,9 @@ import Button from '@mui/material/Button';
 import useAppData from '../data/hook/UseAppData';
 import Link from 'next/link';
 
-
-
 const drawerWidth = 240;
-const navItems = ['Quem Sou', 'Portfólio'];
 
-export default function DrawerAppBar(props) {
-  const dados = useAppData()
+export default function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -86,19 +78,19 @@ export default function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
-          <Link href="/home">
+          <Link href="/Home">
             <Button key="Home" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               Home
             </Button>
             </Link>
 
-            <Link href="/about">
+            <Link href="/About">
             <Button key="About" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               About
             </Button>
             </Link>
 
-            <Link href="/portfolio">
+            <Link href="/Portfolio">
             <Button key="Portfolio" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
               Portfolio
             </Button>
@@ -126,7 +118,3 @@ export default function DrawerAppBar(props) {
     </Box>
   );
 }
-
-DrawerAppBar.propTypes = {
-  window: PropTypes.func,
-};

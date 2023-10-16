@@ -14,7 +14,7 @@ import Image from 'next/image';
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
-export default function about () {
+export default function About () {
     const [repos, setRepos] = useState([]);
 
     return (

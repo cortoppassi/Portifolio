@@ -6,7 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
 import MicIcon from '@mui/icons-material/Mic';
 import CampaignIcon from '@mui/icons-material/Campaign';
-
+import Image from 'next/image';
 import 'dotenv/config';
 const gptToken = process.env.opemAiToken;
 
@@ -167,9 +167,11 @@ export default function ChatbotModal() {
 
   return (
     <div style={chatBotStyle}>
-      <img
+      <Image
         src='https://media.licdn.com/dms/image/D5612AQHyZAlKMTOc0w/article-cover_image-shrink_423_752/0/1678039642851?e=1702512000&v=beta&t=gzAEKOjlZuYpMWOBfBM6MXSreupFeCfoXfJsAaxXtrE'
         alt="bot"
+        width={70}
+        height={70}
         style={imgStyle}
         onClick={handleOpen}
       />

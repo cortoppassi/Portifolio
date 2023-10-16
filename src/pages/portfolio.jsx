@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   CssBaseline,
@@ -39,7 +38,7 @@ const repoData = [
     html_url: 'https://github.com/cortoppassi/Rede-Neural',
   },
 ];
-export default function portfolio() {
+export default function Portfolio() {
   const [repos, setRepos] = useState([]);
 
   return (

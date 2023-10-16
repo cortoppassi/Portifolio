@@ -25,7 +25,7 @@ export default function MultiActionAreaCard() {
     }, 2000); // Altere o valor para ajustar a velocidade da animação
 
     return () => clearInterval(timer);
-  }, []);
+  }, [imageUrls.length]);
 
   return (
     <div style={{ display: 'flex', overflow: 'hidden' }}>

@@ -19,7 +19,7 @@ import Navbar from '../components/Navbar';
 
 const defaultTheme = createTheme();
 
-export default function portfolio() {
+export default function Portfolio() {
   const [repos, setRepos] = useState([]);
   const [filteredRepos, setFilteredRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');

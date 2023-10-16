@@ -11,9 +11,9 @@ import {
   Container,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CardBlog from '../components/CardsBlog';
 import ChatBot from '../components/ChatBot';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'
 import Image from 'next/image';
 import 'dotenv/config';
 
@@ -133,32 +133,7 @@ export default function Index() {
         </Container>
       </main>
       <ChatBot />
-      <Box
-        sx={{
-          p: 6,
-          bgcolor: '#f5f5f5',
-          minHeight: '50vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}
-        component="footer"
-      >
-        <div>
-          <CardBlog />
-        </div>
-        <div>
-          <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
-            Conecte-se comigo para colaborações e oportunidades futuras.
-          </Typography>
-          <Typography variant="subtitle1" align="center" color="#001568" component="p">
-            <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </Typography>
-        </div>
-      </Box>
+      <Footer />
     </ThemeProvider>
   );
 }

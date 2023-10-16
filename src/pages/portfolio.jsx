@@ -7,29 +7,30 @@ import {
   CardMedia,
   CssBaseline,
   Grid,
-  Box,
   Typography,
   Container,
   TextField,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CardBlog from '../components/CardsBlog';
+import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
 import Navbar from '../components/Navbar';
 
 const defaultTheme = createTheme();
 
 export default function Portfolio() {
+  // State variables
   const [repos, setRepos] = useState([]);
   const [filteredRepos, setFilteredRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Fetch GitHub repositories on component mount
   useEffect(() => {
     const fetchGitHubRepos = async () => {
       try {
         const response = await axios.get('https://api.github.com/users/cortoppassi/repos');
         setRepos(response.data);
-        setFilteredRepos(response.data); // Mostrar todos os projetos inicialmente
+        setFilteredRepos(response.data); // Show all projects initially
       } catch (error) {
         console.error('Error fetching GitHub repositories', error);
       }
@@ -38,6 +39,7 @@ export default function Portfolio() {
     fetchGitHubRepos();
   }, []);
 
+  // Filter repositories by name
   const filterReposByName = (name) => {
     const filteredProjects = repos.filter((repo) =>
       repo.name.toLowerCase().includes(name.toLowerCase())
@@ -51,17 +53,19 @@ export default function Portfolio() {
       <CssBaseline />
       <main style={{ backgroundColor: 'white' }}>
         <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">
+          {/* Search input */}
           <TextField
             variant="outlined"
-            placeholder="Filtrar por nome"
+            placeholder="Filtrar pelo nome"
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
               filterReposByName(e.target.value);
             }}
-            fullWidth // Ocupa toda a largura disponível
+            fullWidth // Takes up the full available width
             sx={{ margin: '20px 0' }}
           />
+          {/* Grid of filtered repositories */}
           <Grid container spacing={4}>
             {filteredRepos.map((repo) => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>
@@ -89,7 +93,7 @@ export default function Portfolio() {
                   </CardContent>
                   <div style={{ position: 'absolute', bottom: '0', width: '100%', backgroundColor: '#f5f5f5', padding: '5px', display: 'flex', justifyContent: 'space-between' }}>
                     <Button size="small" href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                      Repositório
+                      Repository
                     </Button>
                   </div>
                 </Card>
@@ -99,32 +103,7 @@ export default function Portfolio() {
         </Container>
       </main>
       <ChatBot />
-      <Box
-        sx={{
-          p: 6,
-          bgcolor: '#f5f5f5',
-          minHeight: '50vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-        component="footer"
-      >
-        <div>
-          <CardBlog />
-        </div>
-        <div>
-          <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
-            Conecte-se comigo para colaborações e oportunidades futuras.
-          </Typography>
-          <Typography variant="subtitle1" align="center" color="#001568" component="p">
-            <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </Typography>
-        </div>
-      </Box>
+      <Footer />
     </ThemeProvider>
   );
 }

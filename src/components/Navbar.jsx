@@ -74,6 +74,7 @@ export default function Navbar(props) {
             
             Jonathan Cortoppassi - Desenvolvedor Jr.
           </Typography>
+          
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
           <Link href="/home">

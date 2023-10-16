@@ -7,33 +7,35 @@ import {
   Container,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CardBlog from '../components/CardsBlog';
-import ChatBot from '../components/ChatBot';
-import Navbar from '../components/Navbar'
 import Image from 'next/image';
+import ChatBot from '../components/ChatBot';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
-export default function About () {
-    const [repos, setRepos] = useState([]);
 
-    return (
-      <ThemeProvider theme={defaultTheme}>
-          <Navbar />
-        <CssBaseline />
-        <main style={{ backgroundColor: 'white' }}>
-          <Box
-            sx={{
-              bgcolor: '#f5f5f5',
-              minHeight: '100vh',
-              pt: 8,
-              pb: 6,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Container maxWidth="md">
+export default function About() {
+  const [repos, setRepos] = useState([]);
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Navbar />
+      <CssBaseline />
+
+      <main style={{ backgroundColor: 'white' }}>
+        <Box
+          sx={{
+            bgcolor: '#fff',
+            minHeight: '100vh',
+            pt: 8,
+            pb: 6,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Container maxWidth="md">
             <Grid container spacing={2}>
               <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{
@@ -69,36 +71,11 @@ export default function About () {
               </Grid>
             </Grid>
           </Container>
-          </Box>
-  
-        </main>
-        <ChatBot />
-        <Box
-          sx={{
-            p: 6,
-            bgcolor: '#f5f5f5',
-            minHeight: '50vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'center'
-          }}
-          component="footer"
-        >
-          <div>
-            <CardBlog />
-          </div>
-          <div>
-            <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
-              Conecte-se comigo para colaborações e oportunidades futuras.
-            </Typography>
-            <Typography variant="subtitle1" align="center" color="#001568" component="p">
-              <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </Typography>
-          </div>
         </Box>
-      </ThemeProvider>
-    );
-  }  
+      </main>
+
+      <ChatBot />
+      <Footer />
+    </ThemeProvider>
+  );
+}

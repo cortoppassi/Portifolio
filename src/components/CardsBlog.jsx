@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
 
 export default function MultiActionAreaCard() {
   const imageUrls = [
@@ -35,10 +37,11 @@ export default function MultiActionAreaCard() {
         }}
       >
         {imageUrls.map((imageUrl, index) => (
-          <img
+          <Image
             key={index}
             src={imageUrl}
-            width="50px"
+            width={50}
+            height={50}
             alt=""
             style={{ marginRight: '10px' }} // Espaço entre as imagens
           />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Card,
@@ -14,11 +14,11 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CardBlog from '../components/CardsBlog';
 import ChatBot from '../components/ChatBot';
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
+import Image from 'next/image';
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
-
 const repoData = [
   {
     name: 'Assistente-OpenAI',
@@ -44,7 +44,7 @@ export default function Index() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-        <Navbar />
+      <Navbar />
       <CssBaseline />
       <main style={{ backgroundColor: 'white' }}>
         <Box
@@ -59,13 +59,21 @@ export default function Index() {
           }}
         >
           <Container maxWidth="md">
-            <Grid container spacing={2} >
-              <Grid item xs={12} md={4} >
-                <img
-                  src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
-                  alt=""
-                  style={{ borderRadius: '50%', width: '100%', border: 'solid 1px black', margin: '0 auto' }}
-                />
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{
+                  width: '200px',
+                  height: '200px',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                }}>
+                  <Image
+                    src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
+                    width={200}
+                    height={200}
+                    alt="Nome da Imagem"
+                  />
+                </div>
               </Grid>
               <Grid item xs={12} md={8}>
                 <Typography
@@ -123,7 +131,6 @@ export default function Index() {
             ))}
           </Grid>
         </Container>
-
       </main>
       <ChatBot />
       <Box

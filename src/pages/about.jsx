@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   CssBaseline,
   Grid,
@@ -10,6 +10,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CardBlog from '../components/CardsBlog';
 import ChatBot from '../components/ChatBot';
 import Navbar from '../components/Navbar'
+import Image from 'next/image';
 import 'dotenv/config';
 
 const defaultTheme = createTheme();
@@ -33,32 +34,40 @@ export default function about () {
             }}
           >
             <Container maxWidth="md">
-              <Grid container spacing={2} >
-                <Grid item xs={12} md={4} >
-                  <img
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{
+                  width: '200px',
+                  height: '200px',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                }}>
+                  <Image
                     src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
-                    alt=""
-                    style={{ borderRadius: '50%', width: '100%', border: 'solid 1px black', margin: '0 auto' }}
+                    width={200}
+                    height={200}
+                    alt="Nome da Imagem"
                   />
-                </Grid>
-                <Grid item xs={12} md={8}>
-                  <Typography
-                    component="h1"
-                    variant="h3"
-                    align="left"
-                    color="text.primary"
-                    gutterBottom
-                    style={{ color: '#001568' }}
-                  >
-                    Olá
-                  </Typography>
-                  <Typography variant="h5" align="left" color="text.secondary" paragraph>
-                    sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
-                    Durante minha jornada acadêmica, adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
-                  </Typography>
-                </Grid>
+                </div>
               </Grid>
-            </Container>
+              <Grid item xs={12} md={8}>
+                <Typography
+                  component="h1"
+                  variant="h3"
+                  align="left"
+                  color="text.primary"
+                  gutterBottom
+                  style={{ color: '#001568' }}
+                >
+                  Olá
+                </Typography>
+                <Typography variant="h5" align="left" color="text.secondary" paragraph>
+                  sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
+                  Durante minha jornada acadêmica, adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
           </Box>
   
         </main>

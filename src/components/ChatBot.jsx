@@ -7,8 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import MicIcon from '@mui/icons-material/Mic';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import Image from 'next/image';
-import 'dotenv/config';
-const gptToken = process.env.opemAiToken;
+require('dotenv').config();
 
 const chatBotStyle = {
   position: 'fixed',
@@ -67,7 +66,7 @@ export default function ChatbotModal() {
 
   const [pergunta, setPergunta] = useState('');
   const [resposta, setResposta] = useState('');
-  const [apiKey, setApiKey] = useState(gptToken);
+  const [apiKey, setApiKey] = useState(process.env.NEXT_PUBLIC_OPEN_AI_TOKEN);
   const [loading, setLoading] = useState(false);
 
   const recognition = useRef(null); // Create a ref for SpeechRecognition

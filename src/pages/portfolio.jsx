@@ -54,6 +54,7 @@ export default function Portfolio() {
       <main style={{ backgroundColor: 'white' }}>
         <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">
           {/* Search input */}
+          <div style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', padding: '20px'}}>
           <TextField
             variant="outlined"
             placeholder="Filtrar pelo nome"
@@ -100,6 +101,7 @@ export default function Portfolio() {
               </Grid>
             ))}
           </Grid>
+          </div>
         </Container>
       </main>
       <ChatBot />

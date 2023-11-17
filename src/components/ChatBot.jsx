@@ -142,13 +142,9 @@ export default function ChatbotModal() {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
+          model: 'text-davinci-003',
           prompt: promptCompleto,
-<<<<<<< HEAD
           max_tokens: 100,
-=======
-          max_tokens: 256,
->>>>>>> 5bccc7b2d4dbba13218793554037a1d1ee3077dd
           temperature: 0.5,
         }),
       });

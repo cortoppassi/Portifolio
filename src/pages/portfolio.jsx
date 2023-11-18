@@ -53,9 +53,7 @@ export default function Portfolio() {
       <CssBaseline />
       <main style={{ backgroundColor: '#f5f5f5' }}>
         <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">
-          {/* Search input */}
-          <div style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', padding: '20px'}}>
-          <TextField
+        <TextField
             variant="outlined"
             placeholder="Filtrar pelo nome"
             value={searchQuery}
@@ -66,7 +64,7 @@ export default function Portfolio() {
             fullWidth // Takes up the full available width
             sx={{ margin: '20px 0' }}
           />
-          {/* Grid of filtered repositories */}
+          <div style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', padding: '20px', backgroundColor: 'white'}}>
           <Grid container spacing={4}>
             {filteredRepos.map((repo) => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>

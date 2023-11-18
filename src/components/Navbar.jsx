@@ -55,7 +55,7 @@ export default function Navbar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: 'linear-gradient(90deg,#001568,#000);'}}>
+      <AppBar component="nav" sx={{ background: '#2c2c2c'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -78,19 +78,19 @@ export default function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
           <Link href="/home">
-            <Button key="Home" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+            <Button key="Home">
               Home
             </Button>
             </Link>
 
             <Link href="/about">
-            <Button key="About" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+            <Button key="About">
               About
             </Button>
             </Link>
 
             <Link href="/portfolio">
-            <Button key="Portfolio" sx={{ color: '#fff', border: 'none', cursor: 'pointer' }}>
+            <Button variant="outlined" key="Portfolio">
               Portfolio
             </Button>
             </Link>

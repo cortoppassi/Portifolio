@@ -36,7 +36,7 @@ export default function About() {
         >
           <Container maxWidth="md">
             <Grid container spacing={2}>
-              <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              {/* <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{
                   width: '200px',
                   height: '200px',
@@ -51,7 +51,7 @@ export default function About() {
                     alt="Nome da Imagem"
                   />
                 </div>
-              </Grid>
+              </Grid> */}
               <Grid item xs={12} md={8}>
                 <Typography
                   component="h1"
@@ -64,9 +64,21 @@ export default function About() {
                   Olá
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
-                  sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
-                  Durante minha jornada acadêmica, adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
+                  Sou Jonathan Cortoppassi, um estudante de Análise e Desenvolvimento de Sistemas com uma paixão fervorosa pela criação e inovação através da programação.
                 </Typography>
+
+                <Typography variant="h5" align="left" color="text.secondary" paragraph>
+                  Durante minha jornada acadêmica, mergulhei em uma ampla gama de projetos, desde a construção de páginas web simples até o desenvolvimento de soluções envolvendo inteligência artificial. Um dos projetos mais empolgantes que tive a oportunidade de liderar é o chatbot que você está usando para explorar meu portfólio. Este projeto não apenas destaca minhas habilidades técnicas, mas também reflete minha abordagem criativa para simplificar interações digitais.
+                </Typography>
+
+                <Typography variant="h5" align="left" color="text.secondary" paragraph>
+                  Além dos desafios acadêmicos, faço parte ativa da comunidade 5onda, onde compartilhamos a crença de que a tecnologia tem o poder de mudar o mundo. Na 5onda, estamos unidos pelo desejo comum de aprender, colaborar e fazer a diferença na sociedade. Acreditamos que a tecnologia, quando utilizada com responsabilidade e inovação, pode ser uma força transformadora.
+                </Typography>
+
+                <Typography variant="h5" align="left" color="text.secondary" paragraph>
+                  Estou constantemente em busca de novas oportunidades para aplicar minhas habilidades de programação e contribuir para projetos que tenham um impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou sempre pronto para enfrentar desafios e elevar o potencial da tecnologia.
+                </Typography>
+
               </Grid>
             </Grid>
           </Container>

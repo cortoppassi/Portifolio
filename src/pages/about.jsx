@@ -22,11 +22,10 @@ export default function About() {
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-
       <main style={{ backgroundColor: 'white' }}>
         <Box
           sx={{
-            bgcolor: '#fff',
+            bgcolor: '#f5f5f5',
             minHeight: '100vh',
             pt: 8,
             pb: 6,
@@ -60,7 +59,7 @@ export default function About() {
                   align="left"
                   color="text.primary"
                   gutterBottom
-                  style={{ color: '#001568' }}
+                  style={{ color: '#1976d2' }}
                 >
                   Olá
                 </Typography>

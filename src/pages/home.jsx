@@ -82,7 +82,7 @@ export default function Index() {
                   align="left"
                   color="text.primary"
                   gutterBottom
-                  style={{ color: '#001568' }}
+                  style={{ color: '#1976d2' }}
                 >
                   Olá
                 </Typography>
@@ -122,7 +122,7 @@ export default function Index() {
                     <Typography>{repo.description || 'No description available'}</Typography>
                   </CardContent>
                   <div style={{ position: 'absolute', bottom: '0', width: '100%', backgroundColor: '#f5f5f5', padding: '5px', display: 'flex', justifyContent: 'space-between' }}>
-                    <Button size="small" href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                    <Button size="small" href={repo.html_url} target="_blank" rel="noopener noreferrer" sx={{color: '#1976d2'}}>
                       Repositório
                     </Button>
                   </div>

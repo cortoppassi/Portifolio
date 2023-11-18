@@ -23,10 +23,10 @@ export default function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-    <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor: '#2c2c2c'}}>
+    {/* <Typography variant="h6" sx={{ my: 2 }}>
       MUI
-    </Typography>
+    </Typography> */}
     <Divider />
     <List>
       <Link href="/home">
@@ -69,7 +69,7 @@ export default function Navbar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' },  color:'#1976d2'}}
           >
             
             Jonathan Cortoppassi - Desenvolvedor Jr.

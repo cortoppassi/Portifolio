@@ -51,7 +51,7 @@ export default function Portfolio() {
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-      <main style={{ backgroundColor: 'white' }}>
+      <main style={{ backgroundColor: '#f5f5f5' }}>
         <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">
           {/* Search input */}
           <div style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', padding: '20px'}}>

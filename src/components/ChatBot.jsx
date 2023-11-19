@@ -54,7 +54,7 @@ const inputStyle = {
 };
 
 export default function ChatbotModal() {
-  const [bootVisible, setBotVisible] = useState(true) //Estado para controlar a visibilidade da img
+  const [bootVisible, setBotVisible] = useState(true) //Estado para controlar a visibilidade do bot
   const [open, setOpen] = useState(false);
   const textAreaRef = useRef(null);
 
@@ -74,7 +74,7 @@ export default function ChatbotModal() {
   const [apiKey, setApiKey] = useState(process.env.NEXT_PUBLIC_OPEN_AI_TOKEN);
   const [loading, setLoading] = useState(false);
 
-  const recognition = useRef(null); // Create a ref for SpeechRecognition
+  const recognition = useRef(null); // SpeechRecognition
 
   useEffect(() => {
     if (window.SpeechRecognition || window.webkitSpeechRecognition) {

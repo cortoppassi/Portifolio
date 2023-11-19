@@ -197,22 +197,24 @@ export default function ChatbotModal() {
     }
   };
 
+  const [respostaOption, setRespostaOption] = useState('');
   const handleOptionClick = (option) => {
     switch (option) {
       case 1:
-        console.log('Jonathan cortoppassi!');
+        setRespostaOption('Eu sou o mestre da procrastinação digital, o artista dos códigos inacabados, o Jonathan Cortoppassi, também conhecido como John "Ctrl+C, Ctrl+V, talvez Ctrl+Z"!');
         break;
       case 2:
-        console.log('Andamento');
+        setRespostaOption('Meus projetos são como páginas de um livro inacabado. Começo cheio de empolgação, mas quando chego na página 2, já estou pensando na próxima história!');
         break;
       case 3:
-        console.log('Conjurador de codigo JavaScript');
+        setRespostaOption('Conjurador de código JavaScript, as vezes deslizo pelos campos encantados de React, dançando com os componentes. Outras vezes, aventuro-me nas trilhas mágicas de Node.js, manipulando poderes de servidor.');
         break;
       case 4:
-        console.log('Chama no whats (71)9 9921-4693');
+        setRespostaOption('Chama no whats! (71)9 9921-4693');
         break;
       case 5:
-        console.log('Dowload');
+        setRespostaOption('Dowload');
+        window.open('file:///C:/Users/jonat/OneDrive/Documents/curriculoJonathan.pdf', '_blank');
         break;
       default:
         console.log('Opção não reconhecida');
@@ -237,7 +239,7 @@ export default function ChatbotModal() {
       >
         <Box sx={modalStyle}>
         <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px', marginBottom: '20px'}}>
-              <ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
+              <ul style={{ listStyleType: 'none', padding: '6px', margin: '0' }}>
                 {options.map((option) => (
                   <li
                     key={option.id}
@@ -260,13 +262,15 @@ export default function ChatbotModal() {
           </div>
           
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
-            <p style={{ color: '#bababa' }}>{resposta}</p>
+            {resposta && <p style={{ color: '#bababa' }}>{resposta}</p>}
+            {respostaOption && <p style={{ color: '#bababa' }}>{respostaOption}</p>}
             {resposta && (
               <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
                 <CampaignIcon />
               </Button>
             )}
           </div>
+          
           <div style={inputStyle}>
             <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
               <textarea

@@ -198,8 +198,25 @@ export default function ChatbotModal() {
   };
 
   const handleOptionClick = (option) => {
-    // Adicione lógica para lidar com a opção clicada
-    console.log(`Opção ${option} clicada!`);
+    switch (option) {
+      case 1:
+        console.log('Jonathan cortoppassi!');
+        break;
+      case 2:
+        console.log('Andamento');
+        break;
+      case 3:
+        console.log('Conjurador de codigo JavaScript');
+        break;
+      case 4:
+        console.log('Chama no whats (71)9 9921-4693');
+        break;
+      case 5:
+        console.log('Dowload');
+        break;
+      default:
+        console.log('Opção não reconhecida');
+    }
   };
 
   return (

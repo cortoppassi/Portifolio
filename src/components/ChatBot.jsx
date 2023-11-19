@@ -6,6 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
 import MicIcon from '@mui/icons-material/Mic';
 import CampaignIcon from '@mui/icons-material/Campaign';
+import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 require('dotenv').config();
 
@@ -71,6 +72,7 @@ const options = [
 ];
 
 export default function ChatbotModal() {
+  const [menuVisible, setMenuVisible] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const handleMouseOver = (item) => {
     setHoveredItem(item);
@@ -201,24 +203,33 @@ export default function ChatbotModal() {
   const handleOptionClick = (option) => {
     switch (option) {
       case 1:
-        setRespostaOption('Eu sou o mestre da procrastinação digital, o artista dos códigos inacabados, o Jonathan Cortoppassi, também conhecido como John "Ctrl+C, Ctrl+V, talvez Ctrl+Z"!');
+        setRespostaOption('Eu sou o mestre da procrastinação digital, o artista dos códigos inacabados, Jonathan Cortoppassi, também conhecido como John "Ctrl+C, Ctrl+V, talvez Ctrl+Z"!');
+        toggleMenuVisibility();
         break;
       case 2:
         setRespostaOption('Meus projetos são como páginas de um livro inacabado. Começo cheio de empolgação, mas quando chego na página 2, já estou pensando na próxima história!');
+        toggleMenuVisibility();
         break;
       case 3:
         setRespostaOption('Conjurador de código JavaScript, as vezes deslizo pelos campos encantados de React, dançando com os componentes. Outras vezes, aventuro-me nas trilhas mágicas de Node.js, manipulando poderes de servidor.');
+        toggleMenuVisibility();
         break;
       case 4:
-        setRespostaOption('Chama no whats! (71)9 9921-4693');
+        setRespostaOption('Por que o celular foi ao terapeuta? Porque estava se sentindo desconectado! Chama no whats! (71)9 9921-4693');
+        toggleMenuVisibility();
         break;
       case 5:
-        setRespostaOption('Dowload');
-        window.open('file:///C:/Users/jonat/OneDrive/Documents/curriculoJonathan.pdf', '_blank');
+        setRespostaOption('Meu currículo é como um download de alta velocidade - em poucos segundos, você tem acesso a uma versão compacta, mas poderosa, da minha jornada profissional. Estou pronto para ser "instalado" na sua equipe! 🚀📄');
+        window.open('https://raw.githubusercontent.com/cortoppassi/Portifolio/main/curriculoJonathan.pdf', '_blank');
+        toggleMenuVisibility();
         break;
       default:
         console.log('Opção não reconhecida');
     }
+  };
+
+  const toggleMenuVisibility = () => {
+    setMenuVisible(!menuVisible);
   };
 
   return (
@@ -238,23 +249,28 @@ export default function ChatbotModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-        <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px', marginBottom: '20px'}}>
-              <ul style={{ listStyleType: 'none', padding: '6px', margin: '0' }}>
-                {options.map((option) => (
-                  <li
-                    key={option.id}
-                    style={{
-                      ...liStyle,
-                      border: hoveredItem === option.id ? '1px solid #bababa' : liStyle.border,
-                    }}
-                    onMouseOver={() => handleMouseOver(option.id)}
-                    onMouseOut={handleMouseOut}
-                    onClick={() => handleOptionClick(option.id)}
-                  >
-                    {option.id} - {option.label}
-                  </li>
-                ))}
-            </ul>
+          <div>
+          <MenuIcon onClick={toggleMenuVisibility} style={{ cursor: 'pointer' }} />
+            {menuVisible && (
+              <div style={{ overflow: 'hidden', backgroundColor: '#222', color: '#bababa', borderRadius: '4px', marginBottom: '20px' }}>
+                <ul style={{ listStyleType: 'none', padding: '6px', margin: '0' }}>
+                  {options.map((option) => (
+                    <li
+                      key={option.id}
+                      style={{
+                        ...liStyle,
+                        border: hoveredItem === option.id ? '1px solid #bababa' : liStyle.border,
+                      }}
+                      onMouseOver={() => handleMouseOver(option.id)}
+                      onMouseOut={handleMouseOut}
+                      onClick={() => handleOptionClick(option.id)}
+                    >
+                      {option.id} - {option.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>

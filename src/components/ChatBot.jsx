@@ -211,7 +211,7 @@ export default function ChatbotModal() {
         toggleMenuVisibility();
         break;
       case 3:
-        setRespostaOption('Conjurador de código JavaScript, as vezes deslizo pelos campos encantados de React, dançando com os componentes. Outras vezes, aventuro-me nas trilhas mágicas de Node.js, manipulando poderes de servidor.');
+        setRespostaOption('Minha experiência? Sou Conjurador de código JavaScrip, já enfrentei dragões de bugs e lancei encantamentos para que meus chat bots fossem mais inteligentes que um oráculo. Criei páginas web tão simples e elegantes que até mesmo os unicórnios ficariam com inveja. Ah, e os projetos mais complexos? Bem, esses são como poções mágicas, misturando algoritmos e códigos para criar resultados verdadeiramente encantadores!🧙‍♂️✨');
         toggleMenuVisibility();
         break;
       case 4:
@@ -273,18 +273,19 @@ export default function ChatbotModal() {
             )}
           </div>
 
-          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
-            <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>
-          </div>
-          
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
-            {resposta && <p style={{ color: '#bababa' }}>{resposta}</p>}
-            {respostaOption && <p style={{ color: '#bababa' }}>{respostaOption}</p>}
+            {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' :respostaOption}</p>}
+            {resposta && <p style={{ color: '#bababa'}}>{resposta}</p>}
+            
             {resposta && (
               <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
                 <CampaignIcon />
               </Button>
             )}
+          </div>
+
+          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
+            <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>
           </div>
           
           <div style={inputStyle}>

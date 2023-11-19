@@ -54,16 +54,21 @@ const inputStyle = {
 };
 
 export default function ChatbotModal() {
+  const [bootVisible, setBotVisible] = useState(true) //Estado para controlar a visibilidade da img
   const [open, setOpen] = useState(false);
   const textAreaRef = useRef(null);
+
   const handleOpen = () => {
     setOpen(true);
+    setBotVisible(false)
     if (textAreaRef.current) {
       textAreaRef.current.focus();
     }
   };
-  const handleClose = () => setOpen(false);
-
+  const handleClose = () => {
+    setOpen(false);
+    setBotVisible(true)
+  }
   const [pergunta, setPergunta] = useState('');
   const [resposta, setResposta] = useState('');
   const [apiKey, setApiKey] = useState(process.env.NEXT_PUBLIC_OPEN_AI_TOKEN);
@@ -173,7 +178,7 @@ export default function ChatbotModal() {
         alt="bot"
         width={70}
         height={70}
-        style={imgStyle}
+        style={{...imgStyle, display: bootVisible? 'block' : 'none'}}
         onClick={handleOpen}
       />
       <Modal

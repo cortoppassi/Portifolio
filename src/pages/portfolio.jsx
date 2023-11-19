@@ -19,18 +19,17 @@ import Navbar from '../components/Navbar';
 const defaultTheme = createTheme();
 
 export default function Portfolio() {
-  // State variables
+
   const [repos, setRepos] = useState([]);
   const [filteredRepos, setFilteredRepos] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Fetch GitHub repositories on component mount
   useEffect(() => {
     const fetchGitHubRepos = async () => {
       try {
         const response = await axios.get('https://api.github.com/users/cortoppassi/repos');
         setRepos(response.data);
-        setFilteredRepos(response.data); // Show all projects initially
+        setFilteredRepos(response.data);
       } catch (error) {
         console.error('Error fetching GitHub repositories', error);
       }

@@ -84,11 +84,11 @@ export default function Index() {
                   gutterBottom
                   style={{ color: '#1976d2' }}
                 >
-                  Olá
+                  Olá!
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
-                  sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
-                  Durante minha jornada acadêmica, adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
+                  Sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas.
+                  Durante minha jornada acadêmica adquiri uma ampla gama de experiências em projetos, desde a criação de páginas web simples até o desenvolvimento de projetos envolvendo inteligência artificial.
                 </Typography>
               </Grid>
             </Grid>

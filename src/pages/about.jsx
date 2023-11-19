@@ -61,7 +61,7 @@ export default function About() {
                   gutterBottom
                   style={{ color: '#1976d2' }}
                 >
-                  Olá
+                  Olá!
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
                   Sou Jonathan Cortoppassi, um estudante de Análise e Desenvolvimento de Sistemas com uma paixão fervorosa pela criação e inovação através da programação.

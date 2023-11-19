@@ -18,6 +18,15 @@ const chatBotStyle = {
   alignItems: 'center',
 };
 
+const liStyle = {
+  margin: '0 10px',
+  cursor: 'pointer',
+  padding: '5px',
+  transition: 'border 0.3s ease-in-out',
+  borderRadius: '5px',
+  border: '1px solid transparent',
+};
+
 const modalStyle = {
   position: 'absolute',
   bottom: '10px',
@@ -53,7 +62,24 @@ const inputStyle = {
   justifyContent: 'space-evenly',
 };
 
+const options = [
+  { id: 1, label: 'Quem sou eu?' },
+  { id: 2, label: 'Projetos' },
+  { id: 3, label: 'Habilidades' },
+  { id: 4, label: 'Contato' },
+  { id: 5, label: 'Currículo' },
+];
+
 export default function ChatbotModal() {
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const handleMouseOver = (item) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseOut = () => {
+    setHoveredItem(null);
+  };
+
   const [bootVisible, setBotVisible] = useState(true) //Estado para controlar a visibilidade do bot
   const [open, setOpen] = useState(false);
   const textAreaRef = useRef(null);
@@ -171,6 +197,11 @@ export default function ChatbotModal() {
     }
   };
 
+  const handleOptionClick = (option) => {
+    // Adicione lógica para lidar com a opção clicada
+    console.log(`Opção ${option} clicada!`);
+  };
+
   return (
     <div style={chatBotStyle}>
       <Image
@@ -188,9 +219,29 @@ export default function ChatbotModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#222' }}>
-            <p style={{ color: '#bababa' }}>{pergunta}</p>
+        <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px', marginBottom: '20px'}}>
+              <ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
+                {options.map((option) => (
+                  <li
+                    key={option.id}
+                    style={{
+                      ...liStyle,
+                      border: hoveredItem === option.id ? '1px solid #bababa' : liStyle.border,
+                    }}
+                    onMouseOver={() => handleMouseOver(option.id)}
+                    onMouseOut={handleMouseOut}
+                    onClick={() => handleOptionClick(option.id)}
+                  >
+                    {option.id} - {option.label}
+                  </li>
+                ))}
+            </ul>
           </div>
+
+          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
+            <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>
+          </div>
+          
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             <p style={{ color: '#bababa' }}>{resposta}</p>
             {resposta && (

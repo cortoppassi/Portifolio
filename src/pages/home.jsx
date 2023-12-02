@@ -104,8 +104,10 @@ export default function Index() {
                     height: '60vh',
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: '#f5f5f5',
+                    // backgroundColor: '#f5f5f5',
                     position: 'relative',
+                    // border: 'solid 1px #1976d2'
+                    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   <CardMedia

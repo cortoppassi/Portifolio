@@ -64,7 +64,7 @@ export default function About() {
                   Olá!
                 </Typography>
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>
-                  Sou Jonathan Cortoppassi, um estudante de Análise e Desenvolvimento de Sistemas com uma paixão fervorosa pela criação e inovação através da programação.
+                  Sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento de Sistemas com uma paixão fervorosa pela criação e inovação através da programação.
                 </Typography>
 
                 <Typography variant="h5" align="left" color="text.secondary" paragraph>

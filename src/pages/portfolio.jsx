@@ -63,7 +63,6 @@ export default function Portfolio() {
             fullWidth // Takes up the full available width
             sx={{ margin: '20px 0' }}
           />
-          <div style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', padding: '20px', backgroundColor: 'white'}}>
           <Grid container spacing={4}>
             {filteredRepos.map((repo) => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>
@@ -72,8 +71,8 @@ export default function Portfolio() {
                     height: '60vh',
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: '#f5f5f5',
                     position: 'relative',
+                    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   <CardMedia
@@ -98,7 +97,6 @@ export default function Portfolio() {
               </Grid>
             ))}
           </Grid>
-          </div>
         </Container>
       </main>
       <ChatBot />

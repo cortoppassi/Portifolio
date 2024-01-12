@@ -238,7 +238,7 @@ export default function ChatbotModal() {
   return (
     <div style={chatBotStyle}>
       <Image
-        src='https://media.licdn.com/dms/image/D5612AQHyZAlKMTOc0w/article-cover_image-shrink_423_752/0/1678039642851?e=1702512000&v=beta&t=gzAEKOjlZuYpMWOBfBM6MXSreupFeCfoXfJsAaxXtrE'
+        src='/chatbot.png'
         alt="bot"
         width={70}
         height={70}

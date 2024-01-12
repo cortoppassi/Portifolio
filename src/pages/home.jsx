@@ -69,7 +69,7 @@ export default function Index() {
                   border: '2px solid black',
                 }}>
                   <Image
-                    src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
+                    src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050837?e=1710374400&v=beta&t=pJ1GPlW6czNX9v_cm7GL0oc2S4SZbSfM1nF42M-lw10"
                     width={200}
                     height={200}
                     alt="Nome da Imagem"
@@ -112,7 +112,7 @@ export default function Index() {
                     zIndex: 0, // Ajuste conforme necessário para garantir que a imagem esteja acima de outros elementos
                   }}/>
         </Box>
-        <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">z
+        <Container sx={{ py: 20, minHeight: '100vh' }} maxWidth="lg" className="portfolio">
           <Grid container spacing={4}>
             {repoData.map((repo) => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>

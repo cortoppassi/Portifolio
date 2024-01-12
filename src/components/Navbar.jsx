@@ -72,7 +72,7 @@ export default function Navbar(props) {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' },  color:'#1976d2'}}
           >
             
-            Jonathan Cortoppassi - Desenvolvedor Jr.
+            {/* Jonathan Cortoppassi - Desenvolvedor Jr. */}
           </Typography>
           
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+const axios = require('axios');
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
@@ -168,24 +169,25 @@ export default function ChatbotModal() {
 
     const promptCompleto = mensagemPersonalizada + pergunta;
     try {
-      const response = await fetch('https://api.openai.com/v1/completions', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model: 'text-davinci-003',
-          prompt: promptCompleto,
+      const resposta = await axios.post(
+        'https://api.openai.com/v1/chat/completions',
+        {
+          model: 'gpt-3.5-turbo',
+          messages: [{ role: 'user', content: promptCompleto }],
+          temperature: 0.7,
           max_tokens: 100,
-          temperature: 0.5,
-        }),
-      });
-
-      const data = await response.json();
-      const answer = data.choices[0].text;
-      setResposta(answer);
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+  
+      const respostaDoChat = resposta.data.choices[0].message.content;
+      console.log('Resposta do Chat:', respostaDoChat);
+      setResposta(respostaDoChat);
     } catch (error) {
       console.error('Erro ao fazer pedido:', error.message);
     }

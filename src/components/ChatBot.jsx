@@ -37,7 +37,7 @@ const modalStyle = {
   padding: '4px',
   backgroundColor: '#343541',
   borderRadius: '5px',
-  width: '90%', // Alterado para 100% para tela pequena
+  width: '90%',
   height: '50%',
   opacity: '0.9',
   maxWidth: '400px', // Adicionado limite máximo de largura
@@ -166,15 +166,15 @@ export default function ChatbotModal() {
     }
 
     setResposta('');
-    const mensagemPersonalizada = "Você é Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação.Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?"
+    const mensagemPersonalizada = "Você é Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação.Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?";
 
-    const promptCompleto = mensagemPersonalizada + pergunta;
+    const promptCompleto = `${mensagemPersonalizada}\n${pergunta}`;
     try {
       const resposta = await axios.post(
         'https://api.openai.com/v1/chat/completions',
         {
           model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: promptCompleto }],
+          messages: [{ role: 'system', content: 'Você é Jonathan.' }, { role: 'user', content: promptCompleto }],
           temperature: 0.7,
           max_tokens: 100,
         },
@@ -226,11 +226,13 @@ export default function ChatbotModal() {
         toggleMenuVisibility();
         break;
       case 4:
-        setRespostaOption('Por que o celular foi ao terapeuta? Porque estava se sentindo desconectado! Chama no whats! (71)9 9921-4693');
+        const numeroWhatsapp = '71999214693';
+        const mensagem = 'Olá, gostaria de entrar em contato!';
+        const linkWhatsapp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${encodeURIComponent(mensagem)}`;
+        window.open(linkWhatsapp, '_blank');
         toggleMenuVisibility();
         break;
       case 5:
-        setRespostaOption('Meu currículo é como um download de alta velocidade - em poucos segundos, você tem acesso a uma versão compacta, mas poderosa, da minha jornada profissional. Estou pronto para ser "instalado" na sua equipe! 🚀📄');
         window.open('https://raw.githubusercontent.com/cortoppassi/Portifolio/main/curriculoJonathan.pdf', '_blank');
         toggleMenuVisibility();
         break;

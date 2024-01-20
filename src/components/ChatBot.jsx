@@ -30,6 +30,7 @@ const liStyle = {
 };
 
 const modalStyle = {
+  overflow: 'auto',
   position: 'absolute',
   bottom: '10px',
   right: '25px',
@@ -165,7 +166,7 @@ export default function ChatbotModal() {
     }
 
     setResposta('');
-    const mensagemPersonalizada = "Olá! Eu sou Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação.Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?"
+    const mensagemPersonalizada = "Você é Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação.Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?"
 
     const promptCompleto = mensagemPersonalizada + pergunta;
     try {
@@ -282,7 +283,7 @@ export default function ChatbotModal() {
               </div>
             )}
           </div>
-
+                      
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' :respostaOption}</p>}
             {resposta && <p style={{ color: '#bababa'}}>{resposta}</p>}

@@ -203,6 +203,7 @@ export default function ChatbotModal() {
   };
 
   const handleOnChange = (e) => {
+    setMenuVisible(false)
     setPergunta(e.target.value);
     setRespostaOption('');
     console.log("Texto digitado:", e.target.value);

@@ -202,6 +202,12 @@ export default function ChatbotModal() {
     }
   };
 
+  const handleOnChange = (e) => {
+    setPergunta(e.target.value);
+    setRespostaOption('');
+    console.log("Texto digitado:", e.target.value);
+  };
+
   const [respostaOption, setRespostaOption] = useState('');
   const handleOptionClick = (option) => {
     switch (option) {
@@ -298,7 +304,7 @@ export default function ChatbotModal() {
                 cols="40"
                 placeholder="Digite a pergunta..."
                 value={pergunta}
-                onChange={(e) => setPergunta(e.target.value)}
+                onChange={handleOnChange}
                 onKeyPress={handleKeyPress}
                 style={{
                   backgroundColor: 'transparent',

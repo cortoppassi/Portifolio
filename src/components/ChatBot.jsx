@@ -288,16 +288,15 @@ export default function ChatbotModal() {
                       
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' :respostaOption}</p>}
-            {resposta && <p style={{ color: '#bababa'}}>{resposta}</p>}
-            
-            {resposta && (
+            {resposta && <p style={{ color: '#bababa', backgroundColor: '#292929', margin: '4px', padding: '4px', borderRadius: '4px'}}>{resposta}{resposta && (
               <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
                 <CampaignIcon />
               </Button>
-            )}
+            )}</p>}
+            
           </div>
 
-          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
+          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , margin: '4px', padding: '4px', borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
             <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>
           </div>
           

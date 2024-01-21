@@ -59,9 +59,9 @@ const inputStyle = {
   right: '0',
   backgroundColor: '#222',
   borderRadius: '5px',
-  padding: '8px',
+  padding: '6px',
   overflow: 'hidden',
-  margin: '5px',
+  margin: '6px',
   justifyContent: 'space-evenly',
 };
 
@@ -260,35 +260,36 @@ export default function ChatbotModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}
       >
         <Box sx={modalStyle}>
           <div>
-          <MenuIcon onClick={toggleMenuVisibility} style={{ cursor: 'pointer' }} />
-            {menuVisible && (
-              <div style={{ overflow: 'hidden', backgroundColor: '#222', color: '#bababa', borderRadius: '4px', marginBottom: '20px' }}>
-                <ul style={{ listStyleType: 'none', padding: '6px', margin: '0' }}>
-                  {options.map((option) => (
-                    <li
-                      key={option.id}
-                      style={{
-                        ...liStyle,
-                        border: hoveredItem === option.id ? '1px solid #bababa' : liStyle.border,
-                      }}
-                      onMouseOver={() => handleMouseOver(option.id)}
-                      onMouseOut={handleMouseOut}
-                      onClick={() => handleOptionClick(option.id)}
-                    >
-                      {option.id} - {option.label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <MenuIcon onClick={toggleMenuVisibility} style={{ cursor: 'pointer' }} />
+              {menuVisible && (
+                <div style={{ overflow: 'hidden', backgroundColor: '#222', color: '#bababa', borderRadius: '4px', margin: '2px', padding: '2px' }}>
+                  <ul style={{ listStyleType: 'none', padding: '6px', margin: '0' }}>
+                    {options.map((option) => (
+                      <li
+                        key={option.id}
+                        style={{
+                          ...liStyle,
+                          border: hoveredItem === option.id ? '1px solid #bababa' : liStyle.border,
+                        }}
+                        onMouseOver={() => handleMouseOver(option.id)}
+                        onMouseOut={handleMouseOut}
+                        onClick={() => handleOptionClick(option.id)}
+                      >
+                        {option.id} - {option.label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
           </div>
                       
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
             {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' :respostaOption}</p>}
-            {resposta && <p style={{ color: '#bababa', backgroundColor: '#292929', margin: '4px', padding: '4px', borderRadius: '4px'}}>{resposta}{resposta && (
+            {resposta && <p style={{ color: '#bababa', backgroundColor: '#1a1a1a', margin: '2px', padding: '2px', borderRadius: '2px'}}>{resposta}{resposta && (
               <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
                 <CampaignIcon />
               </Button>
@@ -296,7 +297,7 @@ export default function ChatbotModal() {
             
           </div>
 
-          <div style={{ overflow: 'hidden', backgroundColor: '#222',color: '#bababa' , margin: '4px', padding: '4px', borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
+          <div style={{ overflow: 'hidden', backgroundColor: '#292929',color: '#bababa' , margin: '2px', padding: '2px', borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
             <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>
           </div>
           

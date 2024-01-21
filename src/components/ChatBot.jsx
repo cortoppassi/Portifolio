@@ -103,6 +103,7 @@ export default function ChatbotModal() {
   const [resposta, setResposta] = useState('');
   const [apiKey, setApiKey] = useState(process.env.NEXT_PUBLIC_OPEN_AI_TOKEN);
   const [loading, setLoading] = useState(false);
+  const [audioUrl, setAudioUrl] = useState('');
 
   const recognition = useRef(null); // SpeechRecognition
 
@@ -147,55 +148,92 @@ export default function ChatbotModal() {
     }
   };
 
-  const speakResponse = () => {
-    if ('speechSynthesis' in window) {
-      const synth = window.speechSynthesis;
-      const utterance = new SpeechSynthesisUtterance(resposta);
-      synth.speak(utterance);
-    }
-  };
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    if (!apiKey) {
-      setResposta('Necessário colocar a chave da API');
-      setLoading(false);
-      return;
-    }
-
-    setResposta('');
-    const mensagemPersonalizada = "Você é Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação.Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?";
-
-    const promptCompleto = `${mensagemPersonalizada}\n${pergunta}`;
-    try {
-      const resposta = await axios.post(
-        'https://api.openai.com/v1/chat/completions',
-        {
-          model: 'gpt-3.5-turbo',
-          messages: [{ role: 'system', content: 'Você é Jonathan.' }, { role: 'user', content: promptCompleto }],
-          temperature: 0.7,
-          max_tokens: 100,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
-  
-      const respostaDoChat = resposta.data.choices[0].message.content;
-      console.log('Resposta do Chat:', respostaDoChat);
-      setResposta(respostaDoChat);
-    } catch (error) {
-      console.error('Erro ao fazer pedido:', error.message);
-    }
-
-    setPergunta('');
+  if (!apiKey) {
+    setResposta('Necessário colocar a chave da API');
     setLoading(false);
-  };
+    return;
+  }
+
+  setResposta('');
+  const mensagemPersonalizada =
+    "Você é Jonathan, um entusiasta de Análise e Desenvolvimento de Sistemas apaixonado por transformar ideias em realidade através da programação. Durante minha jornada acadêmica, explorei diversos projetos, desde a criação de páginas web simples até o desenvolvimento de soluções avançadas em inteligência artificial, chatbots e automação de tarefas. Atualmente, estou dedicado a aprimorar minhas habilidades em tecnologias essenciais, como React e Node.js, para acompanhar as demandas dinâmicas do mercado. Minha paixão pela programação e meu desejo constante de aprendizado me impulsionam a buscar soluções inovadoras e eficazes, sempre com o objetivo de agregar valor à organização. Resido em Salvador-BA e tenho 26 anos. Estou ansioso para explorar novas oportunidades e contribuir para projetos que promovam impacto positivo. Seja na criação de experiências web envolventes ou no desenvolvimento de soluções avançadas de inteligência artificial, estou pronto para enfrentar desafios e elevar o potencial da tecnologia. Como posso ajudar você hoje?";
+
+  const promptCompleto = `${mensagemPersonalizada}\n${pergunta}`;
+  try {
+    const resposta = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'system', content: 'Você é Jonathan.' },
+          { role: 'user', content: promptCompleto },
+        ],
+        temperature: 0.7,
+        max_tokens: 100,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+      }
+    );
+
+    const respostaDoChat = resposta.data.choices[0].message.content;
+    console.log('Resposta do Chat:', respostaDoChat);
+    setResposta(respostaDoChat);
+
+    // Obtendo o áudio da resposta usando a API de Text to Speech (TTS)
+    const audioResposta = await axios.post(
+      'https://api.openai.com/v1/audio/speech',
+      {
+        model: 'tts-1',
+        input: respostaDoChat,
+        voice: 'alloy',
+        format: 'mp3', // ou 'opus', 'aac', 'flac' conforme necessário
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        responseType: 'arraybuffer', // Adicione esta opção para processar a resposta como um array de bytes
+      }
+    );
+    
+    console.log('Resposta da API de Áudio:', audioResposta);
+    
+    // Verifique se há uma URL de áudio na resposta
+if (audioResposta.headers['content-type'] === 'audio/mpeg') {
+  // Crie um Blob a partir dos dados da resposta
+  const blob = new Blob([audioResposta.data], { type: 'audio/mpeg' });
+
+  // Crie uma URL a partir do Blob
+  const audioUrl = URL.createObjectURL(blob);
+
+  // Salvando o URL do áudio
+  setAudioUrl(audioUrl);
+
+  // Reproduzir o áudio usando um elemento de áudio HTML
+  const audioElement = new Audio(audioUrl);
+  audioElement.play();
+} else {
+  console.error('A resposta da API de áudio não contém uma URL válida:', audioResposta.data);
+}
+    
+  } catch (error) {
+    console.error('Erro ao fazer pedido:', error.message);
+  }
+
+  setPergunta('');
+  setLoading(false);
+};
+
+  
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -288,14 +326,20 @@ export default function ChatbotModal() {
           </div>
                       
           <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', backgroundColor: '#343541' }}>
-            {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' :respostaOption}</p>}
-            {resposta && <p style={{ color: '#bababa', backgroundColor: '#1a1a1a', margin: '2px', padding: '2px', borderRadius: '2px'}}>{resposta}{resposta && (
-              <Button type="button" style={{ color: 'white' }} onClick={speakResponse}>
-                <CampaignIcon />
-              </Button>
-            )}</p>}
-            
-          </div>
+  {respostaOption && <p style={{ color: '#bababa', display: pergunta ? 'none' : 'flex' }}>{resposta ? '' : respostaOption}</p>}
+  {resposta && (
+    <div>
+      <p style={{ color: '#bababa', backgroundColor: '#1a1a1a', margin: '2px', padding: '2px', borderRadius: '2px' }}>
+        {resposta}
+      </p>
+      <audio controls autoPlay>
+        <source src={audioUrl} type="audio/mp3" />
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    </div>
+  )}
+</div>
+
 
           <div style={{ overflow: 'hidden', backgroundColor: '#292929',color: '#bababa' , margin: '2px', padding: '2px', borderRadius: '4px',display: pergunta ? 'flex' : 'none'}}>
             <p style={{ color: '#bababa', padding: '10px' }}>{pergunta}</p>

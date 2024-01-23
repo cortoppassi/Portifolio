@@ -1,14 +1,11 @@
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{html,js,ts,jsx,tsx}',
+    './components/**/*.{html,js,ts,jsx,tsx}',
+    './index.html',
+  ],
   //darkMode: false, or 'media' or 'class'
   theme: {
     extend: {},

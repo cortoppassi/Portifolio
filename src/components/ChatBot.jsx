@@ -252,19 +252,41 @@ export default function ChatbotModal() {
     switch (option) {
       case 1:
         setRespostaOption(
-          'Eu sou o mestre da procrastinação digital, o artista dos códigos inacabados, Jonathan Cortoppassi, também conhecido como John "Ctrl+C, Ctrl+V, talvez Ctrl+Z"!'
+          <>
+            Estudante do 3° Semestre em Análises e Desenvolvimento de Sistemas - UNIFACS<br /><br />
+            - Fundamentos de JavaScript Funcional | JavaScript Funcional e Reativo<br />
+            - 701 - Linux Fundamentals | 702 - Linux Essentials<br />
+            - 538 - Containers Fundamentals<br />
+            - 530 - Cloud Fundamentals<br />
+            - Cisco - Dispositivos de Rede e Configuração<br />
+          </>
+          
         );
         toggleMenuVisibility();
         break;
-      case 2:
-        setRespostaOption(
-          "Meus projetos são como páginas de um livro inacabado. Começo cheio de empolgação, mas quando chego na página 2, já estou pensando na próxima história!"
-        );
+        case 2:
+          setRespostaOption(
+            <>
+              • Assistente-OpenAI: Desenvolvimento de assistentes capazes de chamar modelos e utilizar ferramentas para a execução de tarefas.<br />
+              • Stable Diffusion: Participação ativa em um projeto que combinou os conceitos de Midjourney e Stable Diffusion no treinamento de modelos de inteligência artificial.<br />
+              • Rede-Neural: Utilização de biblioteca de redes neurais para simular aprendizado de máquina.<br />
+              • ElectronChat-OpenAI: Aplicação que integra a tecnologia Electron com um modelo de chat GPT, proporcionando interações inteligentes com os usuários.<br />  
+            </>
+          );
+          toggleMenuVisibility();
+          break;
+        
         toggleMenuVisibility();
         break;
       case 3:
         setRespostaOption(
-          "Minha experiência? Sou Conjurador de código JavaScrip, já enfrentei dragões de bugs e lancei encantamentos para que meus chat bots fossem mais inteligentes que um oráculo. Criei páginas web tão simples e elegantes que até mesmo os unicórnios ficariam com inveja. Ah, e os projetos mais complexos? Bem, esses são como poções mágicas, misturando algoritmos e códigos para criar resultados verdadeiramente encantadores!🧙‍♂️✨"
+          <>
+            • Desenvolvimento de chatbots e assistentes virtuais.<br />
+            • Gerenciamento de instâncias (EC2) na nuvem.<br />
+            • Automação de navegação por meio do protocolo DevTools.<br />
+            • Desenvolvimento de projetos web, com foco na integração de APIs, otimização de desempenho e implementação de funcionalidades.<br />
+          </>
+          
         );
         toggleMenuVisibility();
         break;

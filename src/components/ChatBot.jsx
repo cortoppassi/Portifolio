@@ -264,7 +264,7 @@ export default function ChatbotModal() {
         );
         toggleMenuVisibility();
         break;
-        case 2:
+      case 2:
           setRespostaOption(
             <>
               • Assistente-OpenAI: Desenvolvimento de assistentes capazes de chamar modelos e utilizar ferramentas para a execução de tarefas.<br />

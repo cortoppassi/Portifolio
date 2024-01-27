@@ -1,4 +1,3 @@
-
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,17 +7,8 @@ import Typography from '@mui/material/Typography';
 import React, { useEffect, useState } from 'react';
 
 const OutlinedCard = ({ vaga }) => {
-  const bull = (
-    <Box
-      component="span"
-      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-      •
-    </Box>
-  );
-
   return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box sx={{ width: 275, mx: 'auto', mb: 2 }}>
       <Card variant="outlined">
         <CardContent>
           <Typography variant="h5" component="div">
@@ -65,7 +55,7 @@ const VagasList = () => {
   return (
     <div>
       <h1>Listagem de Vagas</h1>
-      <Box display="flex" flexWrap="wrap" justifyContent="space-between">
+      <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems={"center"}>
         {vagas.map((vaga, index) => (
           <OutlinedCard key={index} vaga={vaga} />
         ))}

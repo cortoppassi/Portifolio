@@ -9,6 +9,9 @@ const VagasList = () => {
         const response = await fetch('http://localhost:3001/api/vagas');
         const data = await response.json();
         setVagas(data);
+        
+        // Adicione o console.log para visualizar as vagas no console
+        console.log('Vagas:', data);
       } catch (error) {
         console.error('Erro ao buscar vagas:', error);
       }
@@ -22,7 +25,7 @@ const VagasList = () => {
       <h1>Listagem de Vagas</h1>
       <ul>
         {vagas.map((vaga, index) => (
-          <li key={index}>{vaga}</li>
+          <li key={index}>{vaga.nomeDaVaga}</li>
         ))}
       </ul>
     </div>

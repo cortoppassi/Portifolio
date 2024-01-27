@@ -1,16 +1,46 @@
+
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  CssBaseline,
-  Grid,
-  Typography,
-  Container,
-  TextField,
-} from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const OutlinedCard = ({ vaga }) => {
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+      •
+    </Box>
+  );
+
+  return (
+    <Box sx={{ minWidth: 275 }}>
+      <Card variant="outlined">
+        <CardContent>
+          <Typography variant="h5" component="div">
+            {vaga.nomeDaVaga}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {vaga.nomeDaEmpresa}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {vaga.viaSite}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {vaga.publicado}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    </Box>
+  );
+};
 
 const VagasList = () => {
   const [vagas, setVagas] = useState([]);
@@ -35,11 +65,11 @@ const VagasList = () => {
   return (
     <div>
       <h1>Listagem de Vagas</h1>
-      <ul>
+      <Box display="flex" flexWrap="wrap" justifyContent="space-between">
         {vagas.map((vaga, index) => (
-          <li key={index}>{vaga.nomeDaVaga}</li>,
+          <OutlinedCard key={index} vaga={vaga} />
         ))}
-      </ul>
+      </Box>
     </div>
   );
 };

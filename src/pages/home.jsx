@@ -149,6 +149,7 @@ export default function Index() {
             ))}
           </Grid>
         </Container>
+        
       </main>
       <Vagas/>
       <ChatBot />

@@ -1,9 +1,10 @@
 const express = require('express');
 const puppeteer = require('puppeteer');
+const cors = require('cors');
 
 const app = express();
 const port = 3001;
-
+app.use(cors());
 app.get('/api/vagas', async (req, res) => {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch({headless: false});

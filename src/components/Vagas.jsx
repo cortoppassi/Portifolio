@@ -1,4 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  CssBaseline,
+  Grid,
+  Typography,
+  Container,
+  TextField,
+} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const VagasList = () => {
   const [vagas, setVagas] = useState([]);
@@ -25,7 +37,7 @@ const VagasList = () => {
       <h1>Listagem de Vagas</h1>
       <ul>
         {vagas.map((vaga, index) => (
-          <li key={index}>{vaga.nomeDaVaga}</li>
+          <li key={index}>{vaga.nomeDaVaga}</li>,
         ))}
       </ul>
     </div>

@@ -25,7 +25,12 @@ const OutlinedCard = ({ vaga }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+        <a href={vaga.link} target="_blank" rel="noopener noreferrer">
+          <Button size="small">
+          
+            Learn More
+          </Button>
+          </a>
         </CardActions>
       </Card>
     </Box>

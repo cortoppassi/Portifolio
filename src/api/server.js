@@ -25,13 +25,14 @@ app.get('/api/vagas', async (req, res) => {
     const publicado = await liElement.$eval('.LL4CDc', element => element.textContent.trim());
     // const salario = await spanElement.$eval('.bSuYSc', element => element.textContent.trim());
     // const tempo = await spanElement.$eval('.LL4CDc', element => element.textContent.trim());
-    // const link = await liElement.$eval('.BjJfJf a', anchor => anchor.href);
+    const link = "https://www.google.com/search?q=vagas+para+programador&sca_esv=602159809&sxsrf=ACQVn09iGCbvc8GPXURznLrtWoPXNTG6mQ:1706452578898&ei=Yma2ZeaqNpvW1sQP3eGV8AY&uact=5&oq=vagas+para+programador&gs_lp=Egxnd3Mtd2l6LXNlcnAiFnZhZ2FzIHBhcmEgcHJvZ3JhbWFkb3JItwlQ2gNYoQdwAXgBkAEAmAGSAaABnwKqAQMwLjK4AQPIAQD4AQHCAgoQABhHGNYEGLAD4gMEGAAgQYgGAZAGAw&sclient=gws-wiz-serp&ibp=htl;jobs&sa=X&ved=2ahUKEwj9s5Wgp4CEAxWvpZUCHUT7B38QudcGKAF6BAgVECk#htivrt=jobs&fpstate=tldetail&htilrad=-1.0&htichips=date_posted:today&htischips=date_posted;today&htidocid=eMZIKi4cPsl1AzYFAAAAAA%3D%3D"
       
         vagasArray.push({
             nomeDaVaga,
             nomeDaEmpresa,
             viaSite,
             publicado,
+            link,
         });
 
       console.log(vagasArray)

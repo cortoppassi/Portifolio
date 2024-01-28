@@ -13,15 +13,9 @@ app.get('/api/vagas', async (req, res) => {
 
   // Navigate the page to a URL
   await page.goto('https://www.google.com/search?q=vagas+para+programador&sca_esv=602159809&sxsrf=ACQVn09iGCbvc8GPXURznLrtWoPXNTG6mQ:1706452578898&ei=Yma2ZeaqNpvW1sQP3eGV8AY&uact=5&oq=vagas+para+programador&gs_lp=Egxnd3Mtd2l6LXNlcnAiFnZhZ2FzIHBhcmEgcHJvZ3JhbWFkb3JItwlQ2gNYoQdwAXgBkAEAmAGSAaABnwKqAQMwLjK4AQPIAQD4AQHCAgoQABhHGNYEGLAD4gMEGAAgQYgGAZAGAw&sclient=gws-wiz-serp&ibp=htl;jobs&sa=X&ved=2ahUKEwj9s5Wgp4CEAxWvpZUCHUT7B38QudcGKAF6BAgVECk#htivrt=jobs&fpstate=tldetail&htilrad=-1.0&htichips=date_posted:today&htischips=date_posted;today&htidocid=eMZIKi4cPsl1AzYFAAAAAA%3D%3D');
-
-  // Set screen size
   await page.setViewport({width: 1080, height: 1024});
-
-  // Espera até que a página esteja totalmente carregada
-  await page.waitForSelector('ul'); // Você pode ajustar o seletor conforme necessário
-
-  // Extrai todas as li's do elemento ul
-  const liElements = await page.$$('ul li'); // Seleciona todos os elementos li dentro da ul
+  await page.waitForSelector('ul'); 
+  const liElements = await page.$$('ul li');
 
   // Itera sobre cada li e extrai o texto do elemento com a classe "BjJfJf"
   for (const liElement of liElements) {

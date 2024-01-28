@@ -155,18 +155,3 @@ export default function Index() {
     </ThemeProvider>
   );
 }
-
-{/* <Image
-          src="/productCurvyLines.png"
-          width={1000}
-          height={500}
-          alt="Picture of the author"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: 9999, // Ajuste conforme necessário para garantir que a imagem esteja acima de outros elementos
-          }}> */}

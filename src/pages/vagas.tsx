@@ -1,81 +1,60 @@
 import React, { useState } from "react";
 import { CssBaseline, Grid, Box, Typography, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Image from "next/image";
 import Vagas from "../components/Vagas";
 import ChatBot from "../components/ChatBot";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "dotenv/config";
 
 const defaultTheme = createTheme();
 
 export default function About() {
-  const [repos, setRepos] = useState([]);
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-      <main style={{ backgroundColor: "white" }}>
-        <Box
-          sx={{
-            bgcolor: "#f5f5f5",
-            minHeight: "100vh",
-            pt: 8,
-            pb: 6,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Container maxWidth="md">
-            <Grid container spacing={2}>
-              {/* <Grid item xs={12} md={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{
-                  width: '200px',
-                  height: '200px',
-                  borderRadius: '50%',
-                  overflow: 'hidden',
-                  border: '2px solid black',
-                }}>
-                  <Image
-                    src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050459?e=1702512000&v=beta&t=m1ayRzeMsYTLIfHa2TYybEJ5ulYqIQDbATa1OWjf3_o"
-                    width={200}
-                    height={200}
-                    alt="Nome da Imagem"
-                  />
-                </div>
-              </Grid> */}
-              <Grid item xs={12} md={8}>
-                <Typography
-                  component="h1"
-                  variant="h3"
-                  align="left"
-                  color="text.primary"
-                  gutterBottom
-                  style={{ color: "#1976d2" }}
-                >
-                  Oportunidades de Carreira em Desenvolvimento!
-                </Typography>
+      <Box
+        sx={{
+          bgcolor: "#f5f5f5",
+          minHeight: "100vh",
+          width: "100%",
+          pt: 8,
+          pb: 6,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Container maxWidth={false} sx={{ margin: "auto" }}>
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={12} md={8}>
+              <Typography
+                component="h1"
+                variant="h3"
+                align="left"
+                color="text.primary"
+                gutterBottom
+                style={{ color: "#1976d2" }}
+              >
+                Oportunidades de Carreira em Desenvolvimento!
+              </Typography>
 
-                <Typography
-                  variant="body1"
-                  align="left"
-                  color="text.secondary"
-                  paragraph
-                >
-                  Aqui, compartilho algumas oportunidades de carreira em
-                  desenvolvimento que podem ser do seu interesse. Sinta-se à
-                  vontade para explorar as vagas abaixo e candidatar-se às que
-                  se alinham ao seu perfil e aspirações profissionais.
-                </Typography>
-                <Vagas />
-              </Grid>
+              <Typography
+                variant="body1"
+                align="left"
+                color="text.secondary"
+                paragraph
+              >
+                Aqui, compartilho algumas oportunidades de carreira em
+                desenvolvimento que podem ser do seu interesse. Sinta-se à
+                vontade para explorar as vagas abaixo e candidatar-se às que se
+                alinham ao seu perfil e aspirações profissionais.
+              </Typography>
+              <Vagas />
             </Grid>
-          </Container>
-        </Box>
-      </main>
+          </Grid>
+        </Container>
+      </Box>
 
       <ChatBot />
       <Footer />

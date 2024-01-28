@@ -29,8 +29,8 @@ export default function About() {
             justifyContent: "center",
           }}
         >
-          <Container maxWidth="md">
-            <Grid container spacing={3}>
+          <Container maxWidth={false} sx={{ margin: "auto" }}>
+          <Grid container spacing={2} justifyContent="center">
               <Grid item xs={12} md={8}>
                 <Typography
                   component="h1"

@@ -42,8 +42,7 @@ const VagasList = () => {
         const data = await response.json();
         setVagas(data);
         
-        // Adicione o console.log para visualizar as vagas no console
-        console.log('Vagas:', data);
+        // console.log('Vagas:', data);
       } catch (error) {
         console.error('Erro ao buscar vagas:', error);
       }

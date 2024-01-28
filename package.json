@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node src/api/servidor.js",
+    "start": "node src/api/server.js",
     "lint": "next lint"
   },
   "dependencies": {

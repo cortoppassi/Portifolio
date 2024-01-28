@@ -89,6 +89,12 @@ export default function Navbar(props) {
             </Button>
             </Link>
 
+            <Link href="/vagas">
+            <Button key="Vagas">
+              Vagas
+            </Button>
+            </Link>
+
             <Link href="/portfolio">
             <Button variant="outlined" key="Portfolio">
               Portfolio

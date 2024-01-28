@@ -11,7 +11,6 @@ import {
   Container,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Vagas from '../components/Vagas'
 import ChatBot from '../components/ChatBot';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
@@ -151,7 +150,6 @@ export default function Index() {
         </Container>
         
       </main>
-      <Vagas/>
       <ChatBot />
       <Footer />
     </ThemeProvider>

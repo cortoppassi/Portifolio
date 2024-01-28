@@ -42,15 +42,6 @@ export default function About() {
                 >
                   Olá, sou Jonathan Cortoppassi!
                 </Typography>
-                <Typography
-                  variant="h5"
-                  align="left"
-                  color="text.secondary"
-                  paragraph
-                >
-                  Estudante do 3° Semestre em Análises e Desenvolvimento de
-                  Sistemas - UNIFACS.
-                </Typography>
 
                 <Typography
                   variant="h5"

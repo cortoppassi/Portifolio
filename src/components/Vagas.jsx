@@ -58,7 +58,6 @@ const VagasList = () => {
 
   return (
     <div>
-      <h1>Listagem de Vagas</h1>
       <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems={"center"}>
         {vagas.map((vaga, index) => (
           <OutlinedCard key={index} vaga={vaga} />

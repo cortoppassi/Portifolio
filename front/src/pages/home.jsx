@@ -133,7 +133,7 @@ export default function Index() {
               position: "absolute",
               top: 0,
               left: 0,
-              zIndex: 0, // Ajuste conforme necessário para garantir que a imagem esteja acima de outros elementos
+              zIndex: 0,
             }}
           />
         </Box>

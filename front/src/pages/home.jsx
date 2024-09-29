@@ -85,7 +85,7 @@ export default function Index() {
                   }}
                 >
                   <Image
-                    src="https://media.licdn.com/dms/image/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/0/1695567050837?e=1710374400&v=beta&t=pJ1GPlW6czNX9v_cm7GL0oc2S4SZbSfM1nF42M-lw10"
+                    src="https://media.licdn.com/dms/image/v2/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695567050837?e=1733356800&v=beta&t=kYVGpbWLb0CIugofWyCVhnF_hDYe8jkQsEW5_veKF6M"
                     width={200}
                     height={200}
                     alt="Nome da Imagem"
@@ -110,10 +110,9 @@ export default function Index() {
                   paragraph
                 >
                   Sou Jonathan Cortoppassi, estudante de Análise e
-                  Desenvolvimento de Sistemas. Durante minha jornada acadêmica
-                  adquiri uma ampla gama de experiências em projetos, desde a
-                  criação de páginas web simples até o desenvolvimento de
-                  projetos envolvendo inteligência artificial.
+                  Desenvolvimento de Sistemas.
+                  <br/>
+                  Atualmente, trabalho como Analista Desenvolvedor na SEIDOR, desenvolvendo soluções avançadas de IA para diversas necessidades empresariais, focando na qualidade superior e eficiência de custos.
                 </Typography>
               </Grid>
             </Grid>

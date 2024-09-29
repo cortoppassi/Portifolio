@@ -33,17 +33,6 @@ export default function About() {
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} md={8}>
               <Typography
-                component="h1"
-                variant="h3"
-                align="left"
-                color="text.primary"
-                gutterBottom
-                style={{ color: "#1976d2" }}
-              >
-                Olá, sou Jonathan Cortoppassi!
-              </Typography>
-
-              <Typography
                 variant="h5"
                 align="left"
                 color="text.secondary"
@@ -51,13 +40,11 @@ export default function About() {
               >
                 <br />
                 <strong>Formação:</strong>
-                <br />- 3° Semestre em Análises e Desenvolvimento de Sistemas -
-                UNIFACS
+                <br />- 3° Semestre em Análises e Desenvolvimento de Sistemas - UNIFACS
                 <br />
                 <br />
                 <strong>Certificados:</strong>
-                <br />- Fundamentos de JavaScript Funcional | JavaScript
-                Funcional e Reativo
+                <br />- Fundamentos de JavaScript Funcional | JavaScript Funcional e Reativo
                 <br />- 701 - Linux Fundamentals | 702 - Linux Essentials
                 <br />- 538 - Containers Fundamentals
                 <br />- 530 - Cloud Fundamentals
@@ -65,12 +52,11 @@ export default function About() {
                 <br />
                 <br />
                 <strong>Experiência:</strong>
+                <br />- Atualmente, trabalho como Analista Desenvolvedor na SEIDOR, desenvolvendo soluções avançadas de IA para diversas necessidades empresariais, focando na qualidade superior e eficiência de custos.
                 <br />- Desenvolvimento de chatbots e assistentes virtuais.
                 <br />- Gerenciamento de instâncias (EC2) na nuvem.
                 <br />- Automação de navegação por meio do protocolo DevTools.
-                <br />- Desenvolvimento de projetos web, com foco na integração
-                de APIs, otimização de desempenho e implementação de
-                funcionalidades.
+                <br />- Desenvolvimento de projetos web, com foco na integração de APIs, otimização de desempenho e implementação de funcionalidades.
                 <br />
                 <br />
               </Typography>

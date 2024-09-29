@@ -40,7 +40,7 @@ export default function About() {
               >
                 <br />
                 <strong>Formação:</strong>
-                <br />- 3° Semestre em Análises e Desenvolvimento de Sistemas - UNIFACS
+                <br />- 4° Semestre em Análises e Desenvolvimento de Sistemas - UNIFACS
                 <br />
                 <br />
                 <strong>Certificados:</strong>

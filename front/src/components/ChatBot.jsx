@@ -187,7 +187,6 @@ export default function ChatbotModal() {
       );
 
       const respostaDoChat = resposta.data.choices[0].message.content;
-      console.log("Resposta do Chat:", respostaDoChat);
       setResposta(respostaDoChat);
 
       // Obtendo o áudio da resposta usando a API de Text to Speech (TTS)
@@ -207,8 +206,6 @@ export default function ChatbotModal() {
           responseType: "arraybuffer", // Processar a resposta como um array de bytes
         }
       );
-
-      console.log("Resposta da API de Áudio:", audioResposta);
 
       // Verifique se há uma URL de áudio na resposta
       if (audioResposta.headers["content-type"] === "audio/mpeg") {
@@ -244,7 +241,6 @@ export default function ChatbotModal() {
     setMenuVisible(false);
     setPergunta(e.target.value);
     setRespostaOption("");
-    console.log("Texto digitado:", e.target.value);
   };
 
   const [respostaOption, setRespostaOption] = useState("");

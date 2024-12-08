@@ -52,6 +52,7 @@ export default function Index() {
         <Box
           sx={{
             bgcolor: "#f7f7f7",
+            backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
             minHeight: "100vh",
             pt: 8,
             pb: 6,
@@ -126,7 +127,7 @@ export default function Index() {
           sx={{
             py: 20,
             minHeight: "100vh",
-            backgroundColor: "#f7f7f7",
+            backgroundColor: "#b8b8b8",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

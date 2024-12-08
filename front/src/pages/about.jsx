@@ -29,36 +29,51 @@ export default function About() {
           justifyContent: "center",
         }}
       >
-        <Container maxWidth={false} sx={{ margin: "auto" }}>
+        <Container maxWidth="lg" sx={{ margin: "auto" }}>
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} md={8}>
-              <Typography
-                variant="h5"
-                align="left"
-                color="text.secondary"
-                paragraph
-              >
+              <Typography variant="h5" align="left" color="#1b263b" paragraph>
+                <strong>Formação Acadêmica:</strong>
                 <br />
-                <strong>Formação:</strong>
-                <br />- 4° Semestre em Análises e Desenvolvimento de Sistemas - UNIFACS
+                4° Semestre em Análise e Desenvolvimento de Sistemas - UNIFACS
                 <br />
                 <br />
-                <strong>Certificados:</strong>
-                <br />- Fundamentos de JavaScript Funcional | JavaScript Funcional e Reativo
-                <br />- 701 - Linux Fundamentals | 702 - Linux Essentials
-                <br />- 538 - Containers Fundamentals
-                <br />- 530 - Cloud Fundamentals
-                <br />- Cisco - Dispositivos de Rede e Configuração
+                <strong>Certificados Relevantes:</strong>
+                <ul>
+                  <li>Fundamentos de JavaScript Funcional | JavaScript Funcional e Reativo</li>
+                  <li>701 - Linux Fundamentals | 702 - Linux Essentials</li>
+                  <li>538 - Containers Fundamentals</li>
+                  <li>530 - Cloud Fundamentals</li>
+                  <li>Cisco - Dispositivos de Rede e Configuração</li>
+                </ul>
                 <br />
-                <br />
-                <strong>Experiência:</strong>
-                <br />- Atualmente, trabalho como Analista Desenvolvedor na SEIDOR, desenvolvendo soluções avançadas de IA para diversas necessidades empresariais, focando na qualidade superior e eficiência de custos.
-                <br />- Desenvolvimento de chatbots e assistentes virtuais.
-                <br />- Gerenciamento de instâncias (EC2) na nuvem.
-                <br />- Automação de navegação por meio do protocolo DevTools.
-                <br />- Desenvolvimento de projetos web, com foco na integração de APIs, otimização de desempenho e implementação de funcionalidades.
-                <br />
-                <br />
+                <strong>Experiência Profissional:</strong>
+                <ul>
+                  <li>
+                    Como Analista Desenvolvedor na SEIDOR, sou responsável por
+                    criar soluções de IA para atender a diversas necessidades
+                    empresariais, com ênfase na entrega de qualidade e
+                    otimização de custos.
+                  </li>
+                  <li>
+                    Desenvolvimento e implementação de chatbots e assistentes
+                    virtuais, proporcionando um atendimento automatizado e
+                    eficiente.
+                  </li>
+                  <li>
+                    Gerenciamento de instâncias EC2 em ambientes de nuvem, com
+                    foco em escalabilidade e segurança.
+                  </li>
+                  <li>
+                    Automação de navegação através do protocolo DevTools para
+                    facilitar a interação com sistemas externos.
+                  </li>
+                  <li>
+                    Experiência em integração de APIs, otimização de
+                    desempenho web e implementação de novas funcionalidades para
+                    projetos de grande porte.
+                  </li>
+                </ul>
               </Typography>
             </Grid>
           </Grid>

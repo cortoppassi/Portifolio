@@ -30,7 +30,8 @@ const Footer = () => {
     <Box
       sx={{
         p: 6,
-        bgcolor: '#dadada',
+        // bgcolor: '#dadada',
+        backgroundImage: "linear-gradient(to top, #ffffff, #b8b8b8)",
         minHeight: '50vh',
         display: 'flex',
         flexDirection: isSmallScreen ? 'column' : 'row',

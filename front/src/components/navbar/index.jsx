@@ -36,10 +36,10 @@ const Navbar = (props) => {
           <S.Title>JC</S.Title>
           <S.NavDesktop>
             <Link href="/home" passHref>
-              <S.NavButton>Home</S.NavButton>
+              <S.NavButton  className="nav-link">Home</S.NavButton>
             </Link>
             <Link href="/about" passHref>
-              <S.NavButton>About</S.NavButton>
+              <S.NavButton className="nav-link">About</S.NavButton>
             </Link>
           </S.NavDesktop>
         </S.Toolbar>

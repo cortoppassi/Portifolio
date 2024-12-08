@@ -16,3 +16,8 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: white;
 }
+
+.nav-link {
+  text-decoration: none; /* Remove underline do link */
+  border: none; /* Remove qualquer borda */
+}

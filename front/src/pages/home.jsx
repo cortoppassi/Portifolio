@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ChatBot from "../components/ChatBot";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/index";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import "dotenv/config";
@@ -45,16 +45,14 @@ const repoData = [
   },
 ];
 export default function Index() {
-  const [repos, setRepos] = useState([]);
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-      <main style={{ backgroundColor: "white" }}>
+      <main>
         <Box
           sx={{
-            bgcolor: "#f5f5f5",
+            bgcolor: "#f7f7f7",
             minHeight: "100vh",
             pt: 8,
             pb: 6,
@@ -85,12 +83,14 @@ export default function Index() {
                   }}
                 >
                   <Image
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQFCRG9dOfKk5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695567050837?e=1733356800&v=beta&t=kYVGpbWLb0CIugofWyCVhnF_hDYe8jkQsEW5_veKF6M"
+                    src="/profile.jpeg"
                     width={200}
                     height={200}
                     alt="Nome da Imagem"
+                    style={{zIndex: '1'}}
                   />
                 </div>
+
               </Grid>
               <Grid item xs={12} md={8}>
                 <Typography
@@ -99,45 +99,33 @@ export default function Index() {
                   align="left"
                   color="text.primary"
                   gutterBottom
-                  style={{ color: "#1976d2" }}
+                  style={{ color: "#1b263b" }}
                 >
-                  Olá!
+                  Olá
                 </Typography>
                 <Typography
                   variant="h5"
                   align="left"
-                  color="text.secondary"
+                  color="#1b263b"
+                  textDecoration="none"
+                  fontSize="1.5rem"
                   paragraph
                 >
                   Sou Jonathan Cortoppassi, estudante de Análise e
                   Desenvolvimento de Sistemas.
-                  <br/>
-                  Atualmente, trabalho como Analista Desenvolvedor na SEIDOR, desenvolvendo soluções avançadas de IA para diversas necessidades empresariais, focando na qualidade superior e eficiência de custos.
+                  <br />
+                  Atualmente, trabalho como Analista Desenvolvedor na SEIDOR,
+                  desenvolvendo soluções avançadas de IA para diversas
+                  necessidades empresariais, focando na qualidade superior e
+                  eficiência de custos.
                 </Typography>
               </Grid>
             </Grid>
           </Container>
         </Box>
 
-        <Box>
-          <Image
-            src="/productCurvyLines.png"
-            width={1000}
-            height={500}
-            alt="Picture of the author"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: 0,
-            }}
-          />
-        </Box>
         <Container
-          sx={{ py: 20, minHeight: "100vh" }}
+          sx={{ py: 20, minHeight: "100vh", backgroundColor: '#f7f7f7' }}
           maxWidth="lg"
           className="portfolio"
         >

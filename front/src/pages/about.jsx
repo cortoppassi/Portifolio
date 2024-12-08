@@ -3,7 +3,7 @@ import { CssBaseline, Grid, Box, Typography, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
 import ChatBot from "../components/ChatBot";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/index";
 import Footer from "../components/Footer";
 import "dotenv/config";
 

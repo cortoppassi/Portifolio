@@ -35,8 +35,10 @@ const Footer = () => {
         minHeight: '50vh',
         display: 'flex',
         flexDirection: isSmallScreen ? 'column' : 'row',
-        alignItems: 'center',
+        alignItems: isSmallScreen ? 'flex-start' : 'center',
+        justifyContent: 'space-between',
         width: '100vh',
+        gap: '24px',
       }}
       component="footer"
     >

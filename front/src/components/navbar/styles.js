@@ -26,17 +26,6 @@ export const Toolbar = styled.div`
   height: 64px;
 `;
 
-// Title component
-export const Title = styled.h1`
-  font-size: 2.5rem; /* Destaque maior para o nome */
-  color: #1b263b; /* Verde sério */
-  margin: 0;
-  font-family: 'Dancing Script', cursive; /* Fonte cursiva para o estilo médico */
-  text-align: center; /* Centralizado por padrão */
-  font-weight: 400; /* Peso médio para mais fluidez */
-  letter-spacing: 0.5px; /* Espaçamento sutil entre letras */
-`;
-
 // Menu button for mobile
 export const MenuButton = styled.button`
   background: none;

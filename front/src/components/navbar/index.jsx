@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import * as S from './styles';
+import Image from 'next/image';
 
 const Navbar = (props) => {
   const { window } = props;
@@ -33,7 +34,7 @@ const Navbar = (props) => {
           <S.MenuButton onClick={handleDrawerToggle}>
             ☰
           </S.MenuButton>
-          <S.Title>JC</S.Title>
+          <Image src="/main-logo-black-transparent.svg" alt="Logo" width={50} height={50} />
           <S.NavDesktop>
             <Link href="/home" passHref>
               <S.NavButton  className="nav-link">Home</S.NavButton>

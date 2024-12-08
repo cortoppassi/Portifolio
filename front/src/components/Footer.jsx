@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, useMediaQuery, Link } from '@mui/material';
+import { Box, Typography, useMediaQuery, Link, Container } from '@mui/material';
 import CardBlog from '../components/CardsBlog';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <Box
+    <Container
       sx={{
         p: 6,
         // bgcolor: '#dadada',
@@ -70,7 +70,7 @@ const Footer = () => {
           </Link>
         </Typography>
       </div>
-    </Box>
+    </Container>
   );
 }
 

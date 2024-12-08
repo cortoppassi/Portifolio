@@ -49,19 +49,19 @@ export default function Index() {
       <Navbar />
       <CssBaseline />
       <main>
-        <Box
+        
+          <Container
           sx={{
-            bgcolor: "#f7f7f7",
+            py: 20,
+            minHeight: "50vh",
             backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
-            minHeight: "100vh",
-            pt: 8,
-            pb: 6,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
           }}
+          maxWidth="lg"
+          className="portfolio"
         >
-          <Container maxWidth="">
             <Grid container spacing={2}>
               <Grid
                 item
@@ -121,7 +121,6 @@ export default function Index() {
               </Grid>
             </Grid>
           </Container>
-        </Box>
 
         <Container
           sx={{

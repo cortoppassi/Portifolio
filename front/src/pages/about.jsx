@@ -17,9 +17,9 @@ export default function About() {
       <Navbar />
       <CssBaseline />
 
-      <Box
+      <Container
         sx={{
-          bgcolor: "#f5f5f5",
+          backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
           minHeight: "100vh",
           width: "100%",
           pt: 8,
@@ -29,17 +29,17 @@ export default function About() {
           justifyContent: "center",
         }}
       >
-        <Container maxWidth="lg" sx={{ margin: "auto" }}>
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={2} justifyContent="center" padding='32px'>
             <Grid item xs={12} md={8}>
               <Typography variant="h5" align="left" color="#1b263b" paragraph>
                 <strong>Formação Acadêmica:</strong>
                 <br />
-                4° Semestre em Análise e Desenvolvimento de Sistemas - UNIFACS
+                5° Semestre em Análise e Desenvolvimento de Sistemas - UNIFACS
                 <br />
                 <br />
                 <strong>Certificados Relevantes:</strong>
                 <ul>
+                  <li>Engenharia de Prompt</li>
                   <li>Fundamentos de JavaScript Funcional | JavaScript Funcional e Reativo</li>
                   <li>701 - Linux Fundamentals | 702 - Linux Essentials</li>
                   <li>538 - Containers Fundamentals</li>
@@ -77,8 +77,7 @@ export default function About() {
               </Typography>
             </Grid>
           </Grid>
-        </Container>
-      </Box>
+      </Container>
 
       <ChatBot />
       <Footer />

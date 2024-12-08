@@ -91,7 +91,7 @@ export const NavButton = styled.a`
   text-decoration: none;
   font-size: 1rem;
   padding: 8px 16px;
-  
+  transition: font-size 0.3s ease, color 0.3s ease; 
 
   &:hover {
     color: #33486f; //Secondary color

@@ -30,15 +30,14 @@ const repoData = [
   {
     name: "Marionetista-Puppeteer",
     image:
-      "https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png",
+      "https://cdn.prod.website-files.com/5e42f62100b3495a91c730f1/664c76201fc5ab434ca8fcac_What%20is%20Puppeteer_.webp",
     description:
       "Automação de tarefas no navegador usando o Puppeteer, uma API de alto nível para controlar o Chrome/Chromium através do protocolo DevTools.",
     html_url: "https://github.com/cortoppassi/Marionetista-Puppeteer",
   },
   {
     name: "Rede-Neural",
-    image:
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--zI2mT2eo--/c_imagga_scale,f_auto,fl_progressive,h_1080,q_auto,w_1080/https://cl.ly/87d00c5419e6/download/Image%25202018-12-30%2520at%25209.11.37%2520PM.png",
+    image: "https://tutorialzine.com/media/2017/04/brain.jpg",
     description:
       "Este projeto utiliza a biblioteca de redes neurais Brain.js para simular portas lógicas. As redes neurais são uma técnica de aprendizado de máquina que pode ser aplicada em diversos problemas, incluindo problemas de lógica. Este projeto demonstra o uso da biblioteca Brain.js para implementar portas lógicas como XOR, AND, OR e outras.",
     html_url: "https://github.com/cortoppassi/Rede-Neural",
@@ -61,7 +60,7 @@ export default function Index() {
             justifyContent: "center",
           }}
         >
-          <Container maxWidth="md">
+          <Container maxWidth="">
             <Grid container spacing={2}>
               <Grid
                 item
@@ -87,10 +86,9 @@ export default function Index() {
                     width={200}
                     height={200}
                     alt="Nome da Imagem"
-                    style={{zIndex: '1'}}
+                    style={{ zIndex: "1" }}
                   />
                 </div>
-
               </Grid>
               <Grid item xs={12} md={8}>
                 <Typography
@@ -114,10 +112,10 @@ export default function Index() {
                   Sou Jonathan Cortoppassi, estudante de Análise e
                   Desenvolvimento de Sistemas.
                   <br />
-                  Atualmente, trabalho como Analista Desenvolvedor na SEIDOR,
-                  desenvolvendo soluções avançadas de IA para diversas
-                  necessidades empresariais, focando na qualidade superior e
-                  eficiência de custos.
+                  Atualmente, atuo como Analista Desenvolvedor na SEIDOR, onde
+                  sou responsável pelo desenvolvimento de soluções avançadas em
+                  Inteligência Artificial, focando em atender às necessidades
+                  empresariais com alta qualidade e eficiência de custos.
                 </Typography>
               </Grid>
             </Grid>
@@ -125,34 +123,55 @@ export default function Index() {
         </Box>
 
         <Container
-          sx={{ py: 20, minHeight: "100vh", backgroundColor: '#f7f7f7' }}
+          sx={{
+            py: 20,
+            minHeight: "100vh",
+            backgroundColor: "#f7f7f7",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
           maxWidth="lg"
           className="portfolio"
         >
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {repoData.map((repo) => (
               <Grid item key={repo.name} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
-                    height: "60vh",
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     position: "relative",
-                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    "&:hover": {
+                      transform: "translateY(-5px)",
+                      boxShadow: "0 15px 50px rgba(0, 0, 0, 0.2)",
+                    },
                   }}
                 >
                   <CardMedia
                     component="div"
                     sx={{
                       pt: "56.25%",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      borderTopLeftRadius: "8px",
+                      borderTopRightRadius: "8px",
                     }}
                     image={repo.image}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="h2"
+                      sx={{ fontWeight: "bold", color: "#333" }}
+                    >
                       {repo.name}
                     </Typography>
-                    <Typography>
+                    <Typography sx={{ color: "#555" }}>
                       {repo.description || "No description available"}
                     </Typography>
                   </CardContent>
@@ -161,10 +180,12 @@ export default function Index() {
                       position: "absolute",
                       bottom: "0",
                       width: "100%",
-                      backgroundColor: "#f5f5f5",
-                      padding: "5px",
+                      backgroundColor: "#fff",
+                      padding: "10px 15px",
                       display: "flex",
                       justifyContent: "space-between",
+                      borderBottomLeftRadius: "8px",
+                      borderBottomRightRadius: "8px",
                     }}
                   >
                     <Button
@@ -172,7 +193,14 @@ export default function Index() {
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      sx={{ color: "#1976d2" }}
+                      sx={{
+                        color: "#1b263b",
+                        fontWeight: "bold",
+                        transition: "color 0.3s ease",
+                        "&:hover": {
+                          color: "#33486f",
+                        },
+                      }}
                     >
                       Repositório
                     </Button>

@@ -30,7 +30,7 @@ const Footer = () => {
     <Box
       sx={{
         p: 6,
-        bgcolor: '#2c2c2c',
+        bgcolor: '#dadada',
         minHeight: '50vh',
         display: 'flex',
         flexDirection: isSmallScreen ? 'column' : 'row',
@@ -45,14 +45,14 @@ const Footer = () => {
           align="left"
           color="text.primary"
           gutterBottom
-          sx={{ color: '#1976d2' }}
+          sx={{ color: '#1b263b' }}
         >
           Contato
         </Typography>
         {contactInfo.map((info, index) => (
-        <div key={index} style={{ display: 'flex', color: '#1976d2', alignItems: 'center', marginBottom: '10px' }}>
+        <div key={index} style={{ display: 'flex', color: '#1b263b', alignItems: 'center', marginBottom: '10px' }}>
           {info.icon}
-          <Link href={info.link} style={{ textDecoration: 'none', color: '#1976d2', marginLeft: '10px' }} target="_blank" rel="noopener noreferrer">
+          <Link href={info.link} style={{ textDecoration: 'none', color: '#1b263b', marginLeft: '10px' }} target="_blank" rel="noopener noreferrer">
             {info.text}
           </Link>
         </div>
@@ -60,11 +60,11 @@ const Footer = () => {
       </div>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <CardBlog />
-        <Typography variant="subtitle1" align="center" color="#1976d2" component="p">
+        <Typography variant="subtitle1" align="center" color="#1b263b" component="p">
           Conecte-se comigo para colaborações e oportunidades futuras.
         </Typography>
-        <Typography variant="subtitle1" align="center" color="#1976d2" component="p">
-          <Link href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
+        <Typography variant="subtitle1" align="center" color="#1b263b" component="p">
+          <Link href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer" color='#1b263b'>
             LinkedIn
           </Link>
         </Typography>

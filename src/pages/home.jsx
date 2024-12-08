@@ -49,8 +49,7 @@ export default function Index() {
       <Navbar />
       <CssBaseline />
       <main>
-        
-          <Container
+        <Container
           sx={{
             py: 20,
             minHeight: "50vh",
@@ -58,69 +57,69 @@ export default function Index() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            width: '100vh',
           }}
           maxWidth="lg"
           className="portfolio"
         >
-            <Grid container spacing={2}>
-              <Grid
-                item
-                xs={12}
-                md={4}
+          <Grid container spacing={2}>
+            <Grid
+              item
+              xs={12}
+              md={4}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  width: "200px",
+                  height: "200px",
+                  borderRadius: "50%",
+                  overflow: "hidden",
                 }}
               >
-                <div
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    border: "2px solid black",
-                  }}
-                >
-                  <Image
-                    src="/profile.jpeg"
-                    width={200}
-                    height={200}
-                    alt="Nome da Imagem"
-                    style={{ zIndex: "1" }}
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} md={8}>
-                <Typography
-                  component="h1"
-                  variant="h3"
-                  align="left"
-                  color="text.primary"
-                  gutterBottom
-                  style={{ color: "#1b263b" }}
-                >
-                  Olá
-                </Typography>
-                <Typography
-                  variant="h5"
-                  align="left"
-                  color="#1b263b"
-                  textDecoration="none"
-                  fontSize="1.5rem"
-                  paragraph
-                >
-                  Sou Jonathan Cortoppassi, estudante de Análise e
-                  Desenvolvimento de Sistemas.
-                  <br />
-                  Atualmente, atuo como Analista Desenvolvedor na SEIDOR, onde
-                  sou responsável pelo desenvolvimento de soluções avançadas em
-                  Inteligência Artificial, focando em atender às necessidades
-                  empresariais com alta qualidade e eficiência de custos.
-                </Typography>
-              </Grid>
+                <Image
+                  src="/profile.jpeg"
+                  width={200}
+                  height={200}
+                  alt="Nome da Imagem"
+                  style={{ zIndex: "1" }}
+                />
+              </div>
             </Grid>
-          </Container>
+            <Grid item xs={12} md={8}>
+              <Typography
+                component="h1"
+                variant="h3"
+                align="left"
+                color="text.primary"
+                gutterBottom
+                style={{ color: "#1b263b" }}
+              >
+                Olá
+              </Typography>
+              <Typography
+                variant="h5"
+                align="left"
+                color="#1b263b"
+                textDecoration="none"
+                fontSize="1.5rem"
+                paragraph
+              >
+                Sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento
+                de Sistemas.
+                <br />
+                Atualmente, atuo como Analista Desenvolvedor na SEIDOR, onde sou
+                responsável pelo desenvolvimento de soluções avançadas em
+                Inteligência Artificial, focando em atender às necessidades
+                empresariais com alta qualidade e eficiência de custos.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
 
         <Container
           sx={{
@@ -130,6 +129,7 @@ export default function Index() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            width: '100vh',
           }}
           maxWidth="lg"
           className="portfolio"

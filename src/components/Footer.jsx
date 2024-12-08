@@ -36,6 +36,7 @@ const Footer = () => {
         display: 'flex',
         flexDirection: isSmallScreen ? 'column' : 'row',
         alignItems: 'center',
+        width: '100vh',
       }}
       component="footer"
     >

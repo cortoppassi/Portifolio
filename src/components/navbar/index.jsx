@@ -13,12 +13,13 @@ const Navbar = (props) => {
 
   const drawer = (
     <S.DrawerContainer onClick={handleDrawerToggle}>
+      <Image src="/main-logo-black-transparent.svg" alt="Logo" width={50} height={50} />
       <S.Divider />
       <S.NavList>
-        <Link href="/home" passHref>
+        <Link href="/home" passHref style={{textDecoration: 'none'}}>
           <S.NavButton>Home</S.NavButton>
         </Link>
-        <Link href="/about" passHref>
+        <Link href="/about" passHref style={{textDecoration: 'none'}}>
           <S.NavButton>About</S.NavButton>
         </Link>
       </S.NavList>

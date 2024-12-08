@@ -23,6 +23,7 @@ export default function About() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: '100vh',
         }}
       >
         <Grid container spacing={2} justifyContent="center" padding="32px">

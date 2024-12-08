@@ -72,7 +72,7 @@ export const NavDrawer = styled.div`
   left: ${(props) => (props.open ? '0' : '-100%')};
   width: 240px;
   height: 100vh;
-  background-color: #2c2c2c;
+  background-color: #b8b8b8;
   transition: left 0.3s ease-in-out;
   z-index: 20;
 `;

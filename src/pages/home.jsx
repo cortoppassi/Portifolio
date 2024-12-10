@@ -49,188 +49,187 @@ export default function Index() {
       <Navbar />
       <CssBaseline />
       <main>
-      <Box
-        sx={{ 
-          backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
-          minHeight: "50vh",
-          width: "100vw",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <Container
-           component="main"
-           sx={{
-             flex: 1,
-             display: "flex",
-             alignItems: "center",
-             justifyContent: "center",
-             textAlign: "center",
-           }}
-        >
-          <Grid container spacing={2}>
-            <Grid
-              item
-              xs={12}
-              md={4}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-              >
-                <Image
-                  src="/profile.jpeg"
-                  width={200}
-                  height={200}
-                  alt="Nome da Imagem"
-                  style={{ zIndex: "1" }}
-                />
-              </div>
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <Typography
-                component="h1"
-                variant="h3"
-                align="left"
-                color="text.primary"
-                gutterBottom
-                style={{ color: "#1b263b" }}
-              >
-                Olá
-              </Typography>
-              <Typography
-                variant="h5"
-                align="left"
-                color="#1b263b"
-                textDecoration="none"
-                fontSize="1.5rem"
-                paragraph
-              >
-                Sou Jonathan Cortoppassi, estudante de Análise e Desenvolvimento
-                de Sistemas.
-                <br />
-                Atualmente, atuo como Analista Desenvolvedor na SEIDOR, onde sou
-                responsável pelo desenvolvimento de soluções avançadas em
-                Inteligência Artificial, focando em atender às necessidades
-                empresariais com alta qualidade e eficiência de custos.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Container>
-        </Box>
         <Box
-        sx={{ 
-          backgroundColor: "#b8b8b8",
-          minHeight: "100vh",
-          width: "100vw",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <Container
-          component="main"
           sx={{
-            flex: 1, // Faz o container expandir para ocupar o espaço disponível
+            backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
+            minHeight: "50vh",
+            width: "100vw",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            flexDirection: "column",
           }}
         >
-          <Grid container spacing={4} justifyContent="center">
-            {repoData.map((repo) => (
-              <Grid item key={repo.name} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    position: "relative",
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 15px 50px rgba(0, 0, 0, 0.2)",
-                    },
+          <Container
+            component="main"
+            sx={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <Grid container spacing={2}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
                   }}
                 >
-                  <CardMedia
-                    component="div"
-                    sx={{
-                      pt: "56.25%",
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      borderTopLeftRadius: "8px",
-                      borderTopRightRadius: "8px",
-                    }}
-                    image={repo.image}
+                  <Image
+                    src="/profile.jpeg"
+                    width={200}
+                    height={200}
+                    alt="Nome da Imagem"
+                    style={{ zIndex: "1" }}
                   />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="h2"
-                      sx={{ fontWeight: "bold", color: "#333" }}
-                    >
-                      {repo.name}
-                    </Typography>
-                    <Typography sx={{ color: "#555" }}>
-                      {repo.description || "No description available"}
-                    </Typography>
-                  </CardContent>
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "0",
-                      width: "100%",
-                      backgroundColor: "#fff",
-                      padding: "10px 15px",
+                </div>
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Typography
+                  component="h1"
+                  variant="h3"
+                  align="left"
+                  color="text.primary"
+                  gutterBottom
+                  style={{ color: "#1b263b" }}
+                >
+                  Olá
+                </Typography>
+                <Typography
+                  variant="h5"
+                  align="left"
+                  color="#1b263b"
+                  textDecoration="none"
+                  fontSize="1.5rem"
+                  paragraph
+                >
+                  Sou Jonathan Cortoppassi, estudante de Análise e
+                  Desenvolvimento de Sistemas.
+                  <br />
+                  Atualmente, atuo como Analista Desenvolvedor na SEIDOR, onde
+                  sou responsável pelo desenvolvimento de soluções avançadas em
+                  Inteligência Artificial, focando em atender às necessidades
+                  empresariais com alta qualidade e eficiência de custos.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Box
+          sx={{
+            backgroundColor: "#b8b8b8",
+            minHeight: "100vh",
+            width: "100vw",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Container
+            component="main"
+            sx={{
+              flex: 1, // Faz o container expandir para ocupar o espaço disponível
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <Grid container spacing={4} justifyContent="center">
+              {repoData.map((repo) => (
+                <Grid item key={repo.name} xs={12} sm={6} md={4}>
+                  <Card
+                    sx={{
+                      height: "100%",
                       display: "flex",
-                      justifyContent: "space-between",
-                      borderBottomLeftRadius: "8px",
-                      borderBottomRightRadius: "8px",
+                      flexDirection: "column",
+                      position: "relative",
+                      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        boxShadow: "0 15px 50px rgba(0, 0, 0, 0.2)",
+                      },
                     }}
                   >
-                    <Button
-                      size="small"
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <CardMedia
+                      component="div"
                       sx={{
-                        color: "#1b263b",
-                        fontWeight: "bold",
-                        transition: "color 0.3s ease",
-                        "&:hover": {
-                          color: "#33486f",
-                        },
+                        pt: "56.25%",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        borderTopLeftRadius: "8px",
+                        borderTopRightRadius: "8px",
+                      }}
+                      image={repo.image}
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="h2"
+                        sx={{ fontWeight: "bold", color: "#333" }}
+                      >
+                        {repo.name}
+                      </Typography>
+                      <Typography sx={{ color: "#555" }}>
+                        {repo.description || "No description available"}
+                      </Typography>
+                    </CardContent>
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "0",
+                        width: "100%",
+                        backgroundColor: "#fff",
+                        padding: "10px 15px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        borderBottomLeftRadius: "8px",
+                        borderBottomRightRadius: "8px",
                       }}
                     >
-                      Repositório
-                    </Button>
-                  </div>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+                      <Button
+                        size="small"
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: "#1b263b",
+                          fontWeight: "bold",
+                          transition: "color 0.3s ease",
+                          "&:hover": {
+                            color: "#33486f",
+                          },
+                        }}
+                      >
+                        Repositório
+                      </Button>
+                    </div>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         </Box>
       </main>
       <ChatBot />
       <Footer />
-    
     </ThemeProvider>
   );
 }

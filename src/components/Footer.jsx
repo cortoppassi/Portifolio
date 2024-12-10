@@ -66,7 +66,7 @@ const Footer = () => {
                 display: "flex",
                 color: "#1b263b",
                 alignItems: "center",
-                marginBottom: "10px",
+                marginBottom: "8px",
               }}
             >
               {info.icon}
@@ -75,7 +75,7 @@ const Footer = () => {
                 style={{
                   textDecoration: "none",
                   color: "#1b263b",
-                  marginLeft: "10px",
+                  marginLeft: "8px",
                 }}
                 target="_blank"
                 rel="noopener noreferrer"

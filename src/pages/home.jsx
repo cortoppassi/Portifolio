@@ -48,7 +48,7 @@ export default function Index() {
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-      <main>
+      <main style={{ backgroundColor: "#b8b8b8"}}>
         <Box
           sx={{
             backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",

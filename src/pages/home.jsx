@@ -49,18 +49,26 @@ export default function Index() {
       <Navbar />
       <CssBaseline />
       <main>
+      <Box
+        sx={{ 
+          backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
+          minHeight: "50vh",
+          width: "100vw",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <Container
-          sx={{
-            py: 20,
-            minHeight: "50vh",
-            backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: '100vh',
-          }}
-          maxWidth="lg"
-          className="portfolio"
+           component="main"
+           sx={{
+             flex: 1,
+             display: "flex",
+             alignItems: "center",
+             justifyContent: "center",
+             textAlign: "center",
+           }}
         >
           <Grid container spacing={2}>
             <Grid
@@ -120,19 +128,27 @@ export default function Index() {
             </Grid>
           </Grid>
         </Container>
-
+        </Box>
+        <Box
+        sx={{ 
+          backgroundColor: "#b8b8b8",
+          minHeight: "100vh",
+          width: "100vw",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <Container
+          component="main"
           sx={{
-            py: 20,
-            minHeight: "100vh",
-            backgroundColor: "#b8b8b8",
+            flex: 1, // Faz o container expandir para ocupar o espaço disponível
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            width: '100vh',
+            justifyContent: "center",
+            textAlign: "center",
           }}
-          maxWidth="lg"
-          className="portfolio"
         >
           <Grid container spacing={4} justifyContent="center">
             {repoData.map((repo) => (
@@ -210,9 +226,11 @@ export default function Index() {
             ))}
           </Grid>
         </Container>
+        </Box>
       </main>
       <ChatBot />
       <Footer />
+    
     </ThemeProvider>
   );
 }

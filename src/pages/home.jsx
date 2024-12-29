@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -16,6 +16,7 @@ import Navbar from "../components/navbar/index";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import "dotenv/config";
+import VanillaTilt from "vanilla-tilt";
 
 const defaultTheme = createTheme();
 const repoData = [
@@ -43,12 +44,22 @@ const repoData = [
     html_url: "https://github.com/cortoppassi/Rede-Neural",
   },
 ];
+
 export default function Index() {
+  useEffect(() => {
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+      max: 25,
+      speed: 400,
+      // glare: true,
+      "max-glare": 0.5,
+    });
+  }, []);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <CssBaseline />
-      <main style={{ backgroundColor: "#b8b8b8"}}>
+      <main style={{ backgroundColor: "#b8b8b8" }}>
         <Box
           sx={{
             backgroundImage: "linear-gradient(to bottom, #ffffff, #b8b8b8)",
@@ -152,7 +163,14 @@ export default function Index() {
           >
             <Grid container spacing={4} justifyContent="center">
               {repoData.map((repo) => (
-                <Grid item key={repo.name} xs={12} sm={6} md={4}>
+                <Grid
+                  item
+                  key={repo.name}
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  className="card"
+                >
                   <Card
                     sx={{
                       height: "100%",

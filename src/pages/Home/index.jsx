@@ -9,11 +9,19 @@ import Skills from "../Skills";
 import Contact from "../Contact";
 import Logo from "../../assets/main-logo-white-transparent.png";
 import ChatBot from "../../components/ChatBot";
-
+import Resume from "../../assets/atualizadojonathanCV - Copia.pdf";
+import { RiLinkedinFill, RiInstagramLine } from "react-icons/ri";
 const Home = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = Resume;
+    link.download = "Curriculo-Jonathan.pdf";
+    link.click();
+  };
+
   return (
     <>
-    <ChatBot />
+      <ChatBot />
       <div id="home">
         <S.NavbarContainer>
           <S.NavbarLeft>
@@ -45,8 +53,10 @@ const Home = () => {
               <h1>Hi, I´m John Cortoppassi</h1>
               <h2 style={{ color: "#00a5ec" }}>Full Stack Developer</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Currently, I work as a Developer Analyst at SEIDOR, where I am
+                responsible for developing advanced solutions in Artificial
+                Intelligence, focusing on meeting needs businesses with high
+                quality and cost efficiency.
               </p>
               <div
                 style={{
@@ -57,15 +67,45 @@ const Home = () => {
               >
                 <button
                   style={{ backgroundColor: "#00a5ec", color: "#081b29" }}
+                  onClick={() => {
+                    document.querySelector("#contact").scrollIntoView({
+                      behavior: "smooth", // Adiciona o scroll suave
+                      block: "start", // Alinha ao início da seção
+                    });
+                  }}
                 >
                   Get in touch
                 </button>
                 <button
+                  onClick={handleDownload}
                   style={{ color: "#00a5ec", border: "solid 1px #00a5ec" }}
                 >
                   Download CV
                 </button>
               </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                gap: "16px",
+                marginTop: "16px",
+                position: "absolute",
+                bottom: "20px",
+                left: "130px",
+                zIndex: "100",
+                color: "#00a5ec",
+              }}
+            >
+              <a href="https://www.instagram.com/john_cortoppassi/" target="_blank" rel="noopener noreferrer">
+              <RiInstagramLine
+                style={{ border: "solid 1px #00a5ec", borderRadius: "50%", width: "32px", height: "32px", padding: "8px"}}
+              />
+              </a>
+              <a href="https://www.linkedin.com/in/johncortoppassi/" target="_blank" rel="noopener noreferrer">
+              <RiLinkedinFill
+               style={{ border: "solid 1px #00a5ec", borderRadius: "50%", width: "32px", height: "32px", padding: "8px"}}
+              />
+              </a>
             </div>
           </S.HomeContent>
           <S.HomeImage src={Image} alt="Home"></S.HomeImage>

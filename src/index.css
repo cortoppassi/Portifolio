@@ -2,7 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
- 
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -18,14 +17,16 @@ html {
   scroll-behavior: smooth;
 }
 
-
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #00a5ec;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  scale: 1.1;
+  transition: all 0.7s ease;
+  color: #fff;
 }
 
 body {
@@ -34,7 +35,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  
 }
 
 h1 {

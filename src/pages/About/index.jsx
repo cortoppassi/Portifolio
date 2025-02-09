@@ -42,9 +42,17 @@ const About = () => {
         />
       </div>
       <h2>Full Stack Developer!</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+      <p style={{ textAlign: "center", fontSize: "1rem", lineHeight: "1.5", maxWidth: "600px" }}>
+        Como Analista Desenvolvedor na SEIDOR, sou responsável por criar
+        soluções de IA para atender a diversas necessidades empresariais, com
+        ênfase na entrega de qualidade e otimização de custos. Desenvolvimento e
+        implementação de chatbots e assistentes virtuais, proporcionando um
+        atendimento automatizado e eficiente. Gerenciamento de instâncias EC2 em
+        ambientes de nuvem, com foco em escalabilidade e segurança. Automação de
+        navegação através do protocolo DevTools para facilitar a interação com
+        sistemas externos. Experiência em integração de APIs, otimização de
+        desempenho web e implementação de novas funcionalidades para projetos de
+        grande porte.
       </p>
       <button style={{ backgroundColor: "#00a5ec", color: "#081b29" }}>
         Read More

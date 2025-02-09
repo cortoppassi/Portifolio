@@ -43,7 +43,15 @@ const Skills = () => {
               width: "90%",
             }}
           >
-            <p>Computer Science - 2019</p>
+            <ul>
+              <li>JavaScript (ES6+)</li>
+              <li>React (Hooks, Context API, State Management)</li>
+              <li>Node.js & Express</li>
+              <li>TypeScript</li>
+              <li>Jest & Testing (Unit Tests, Integration Tests, Mocks)</li>
+              <li>SQL & Sequelize</li>
+              <li>Performance Optimization in JavaScript</li>
+            </ul>
           </div>
         </S.DivRight>
         <S.DivLeft>
@@ -66,7 +74,14 @@ const Skills = () => {
               width: "90%",
             }}
           >
-            <p>Computer Science - 2019</p>
+            <ul>
+              <li>Computer Science Degree (2019)</li>
+              <li>AI Integration in Applications</li>
+              <li>Software Architecture & Design Patterns (SOLID, MVC)</li>
+              <li>Project Management (Agile, Scrum)</li>
+              <li>Team Collaboration (Remote Work)</li>
+              <li>Continuous Learning & Improvement</li>
+            </ul>
           </div>
         </S.DivLeft>
       </S.SkillsContent>

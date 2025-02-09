@@ -3,15 +3,17 @@ import * as S from "./styles";
 
 const Skills = () => {
   const codingSkills = [
-    { year: "2023 - 2024", title: "Full Stack Developer", description: "Building modern web applications." },
-    { year: "2022 - 2023", title: "Frontend Developer", description: "Specializing in UI/UX design." },
-    { year: "2021 - 2022", title: "Backend Developer", description: "Creating robust APIs." },
+    { year: "2024 - 2025", title: "Analista Desenvolvedor", description: "Focando em performance, segurança e soluções avançadas de IA para aplicações web." },
+    { year: "2023 - 2024", title: "Full Stack Developer", description: "Desenvolvendo aplicações modernas com React, Node.js e boas práticas de arquitetura." },
+    { year: "2022 - 2023", title: "Frontend Developer", description: "Criando interfaces intuitivas e experiências de usuário otimizadas." },
+    { year: "2021 - 2022", title: "Backend Developer", description: "Construindo APIs robustas e escaláveis com foco em lógica de negócios." },
   ];
-
+  
   const professionalSkills = [
-    { year: "2023 - 2024", title: "Team Leadership", description: "Leading teams to success." },
-    { year: "2022 - 2023", title: "Project Management", description: "Managing agile projects." },
-    { year: "2021 - 2022", title: "Problem Solving", description: "Solving complex challenges." },
+    { year: "2024 - 2025", title: "Engenharia de Prompt e Automação", description: "Especializando-se em ferramentas de IA e automação de processos." },
+    { year: "2023 - 2024", title: "Validação e Controle de Qualidade", description: "Testando e validando funcionalidades para garantir alta confiabilidade." },
+    { year: "2022 - 2023", title: "Gestão de Permissões e Segurança", description: "Implementando sistemas de controle de acesso e validações centralizadas." },
+    { year: "2021 - 2022", title: "Colaboração e Trabalho em Equipe", description: "Trabalhando em equipes ágeis para entregar projetos de alto impacto." },
   ];
 
   return (

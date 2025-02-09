@@ -30,7 +30,7 @@ export const HomeImage = styled.img`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 100%;
+  height: auto;
 
   @media (max-width: 768px) {
      display: none;

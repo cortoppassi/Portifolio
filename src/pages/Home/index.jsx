@@ -11,6 +11,7 @@ import Logo from "../../assets/main-logo-white-transparent.png";
 import ChatBot from "../../components/ChatBot";
 import Resume from "../../assets/atualizadojonathanCV - Copia.pdf";
 import { RiLinkedinFill, RiInstagramLine } from "react-icons/ri";
+
 const Home = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -69,8 +70,8 @@ const Home = () => {
                   style={{ backgroundColor: "#00a5ec", color: "#081b29" }}
                   onClick={() => {
                     document.querySelector("#contact").scrollIntoView({
-                      behavior: "smooth", // Adiciona o scroll suave
-                      block: "start", // Alinha ao início da seção
+                      behavior: "smooth",
+                      block: "start",
                     });
                   }}
                 >

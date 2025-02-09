@@ -1,7 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
+import axios from "axios";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Criar backend para enviar email
+      const response = await axios.post(
+        "http://localhost:5000/send-email",
+        formData
+      );
+      alert(response.data);
+    } catch (error) {
+      alert("Erro ao enviar o formulário.");
+    } finally {
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        phone: "",
+        message: "",
+      });
+    }
+  };
+
   return (
     <S.AboutContainer>
       <div
@@ -17,7 +57,7 @@ const Contact = () => {
         <h1 style={{ color: "#00a5ec" }}>Me!</h1>
       </div>
       <form
-        action=""
+        onSubmit={handleSubmit}
         style={{
           alignItems: "center",
           display: "flex",
@@ -36,8 +76,11 @@ const Contact = () => {
           }}
         >
           <input
-          placeholder="Name"
+            placeholder="Name"
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             style={{
               border: "solid 1px #00a5ec",
               borderRadius: "8px",
@@ -47,8 +90,11 @@ const Contact = () => {
             }}
           />
           <input
-          placeholder="Email"
-            type="text"
+            placeholder="Email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             style={{
               border: "solid 1px #00a5ec",
               borderRadius: "8px",
@@ -67,8 +113,11 @@ const Contact = () => {
           }}
         >
           <input
-          placeholder="Assunto"
+            placeholder="Subject"
             type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
             style={{
               border: "solid 1px #00a5ec",
               borderRadius: "8px",
@@ -78,8 +127,11 @@ const Contact = () => {
             }}
           />
           <input
-          placeholder="Telefone"
+            placeholder="Phone"
             type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
             style={{
               border: "solid 1px #00a5ec",
               borderRadius: "8px",
@@ -89,22 +141,37 @@ const Contact = () => {
             }}
           />
         </div>
-        <div style={{ display: "flex", flexDirection: "row", width: "100%", height: "50%" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            height: "50%",
+          }}
+        >
           <textarea
-          placeholder="Mensagem"
-            name=""
-            id=""
+            placeholder="Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             style={{
               border: "solid 1px #00a5ec",
               borderRadius: "8px",
               padding: "8px",
               width: "100%",
-              backgroundColor: "transparent"
+              backgroundColor: "transparent",
             }}
           ></textarea>
         </div>
 
-        <button style={{ backgroundColor: "#00a5ec", color: "#081b29", padding: "8px 24px" }}>
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "#00a5ec",
+            color: "#081b29",
+            padding: "8px 24px",
+          }}
+        >
           Submit
         </button>
       </form>
